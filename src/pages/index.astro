@@ -1,0 +1,211 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const applicationUrl = "https://forms.gle/eJqGfB4XF7RhY4pM7";
+---
+
+<BaseLayout
+  title="喜多村研究室 Docs | Research Systems"
+  description="喜多村研究室が提供・検討している開発環境、GPU、LLM API、研究支援ツールを紹介します。"
+>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href={Astro.url.pathname} aria-label="喜多村研究室 Docs ホーム">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>喜多村研究室 <strong>Docs</strong></span>
+      </a>
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="#benefits">特徴</a>
+        <a href="#systems">システム</a>
+        <a href="#getting-started">利用方法</a>
+        <a class="header-cta" href={applicationUrl} target="_blank" rel="noopener noreferrer">
+          利用を申請
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5h8v8M15 5 5 15" /></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span>KITAMURA LABORATORY SYSTEMS</p>
+          <h1 id="page-title">環境構築ではなく、<br />研究から始める。</h1>
+          <p class="lead">喜多村研究室では、開発環境、GPU、AIツールを共通の研究基盤として整備しています。自分のPCを複雑な設定で汚さず、必要な環境へすぐにアクセスできます。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href={applicationUrl} target="_blank" rel="noopener noreferrer">
+              利用を申請する
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5h8v8M15 5 5 15" /></svg>
+            </a>
+            <a class="text-link" href="#systems">システムを見る <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="application-note">申請フォームの回答には、対象の学生アカウントが必要です。</p>
+        </div>
+
+        <div class="platform-visual" aria-label="研究室システムの構成イメージ">
+          <div class="visual-core">
+            <span class="visual-kicker">KITAMURA LAB</span>
+            <strong>Research<br />Systems</strong>
+            <span class="visual-status"><i></i> Available</span>
+          </div>
+          <div class="visual-node node-workspace"><i></i><span>Workspace</span><strong>Coder</strong></div>
+          <div class="visual-node node-ai"><i></i><span>AI Gateway</span><strong>LLM API</strong></div>
+          <div class="visual-node node-agents"><i></i><span>Tools</span><strong>Agents</strong></div>
+          <div class="visual-node node-gpu"><i></i><span>Compute</span><strong>GPU</strong></div>
+          <svg class="visual-lines" viewBox="0 0 600 480" aria-hidden="true">
+            <path d="M300 240 115 105M300 240 490 105M300 240 110 375M300 240 490 375" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section" id="benefits" aria-labelledby="benefits-title">
+      <div class="section-heading section-heading-wide">
+        <div>
+          <p class="eyebrow"><span></span>WHY IT MATTERS</p>
+          <h2 id="benefits-title">研究に集中できる環境を。</h2>
+        </div>
+        <p>個人のPCごとに環境を作り直すのではなく、研究室が用意した共通基盤を使うことで、セットアップの手間と環境差による問題を減らします。</p>
+      </div>
+      <div class="benefit-grid">
+        <article>
+          <span class="benefit-number">01</span>
+          <h3>すぐに使える</h3>
+          <p>Linuxと開発ツールが用意された個別Workspaceを作成。初期構築に時間を使わず、研究コードの実行から始められます。</p>
+        </article>
+        <article>
+          <span class="benefit-number">02</span>
+          <h3>ローカルを汚さない</h3>
+          <p>依存ライブラリや実験環境はコンテナ内に分離。手元のPCに複雑なパッケージを入れず、プロジェクトごとに環境を保てます。</p>
+        </article>
+        <article>
+          <span class="benefit-number">03</span>
+          <h3>共有GPUを活用</h3>
+          <p>RTX A2000 12GBを搭載した研究室PCを、機械学習、データ解析、3D処理などの計算に利用できます。</p>
+        </article>
+        <article>
+          <span class="benefit-number">04</span>
+          <h3>どこからでも接続</h3>
+          <p>ブラウザのVS Codeやターミナル、使い慣れたVS Code Desktopから、研究室の計算環境へリモート接続できます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="systems-section" id="systems" aria-labelledby="systems-title">
+      <div class="content-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span>RESEARCH SYSTEMS</p>
+            <h2 id="systems-title">提供するシステム</h2>
+          </div>
+          <p>現在利用できる機能と、今後の研究活動に向けて準備・検討している機能です。開発状況はステータスで区別しています。</p>
+        </div>
+
+        <div class="status-legend" aria-label="開発ステータス">
+          <span><i class="legend-available"></i>提供中</span>
+          <span><i class="legend-preparing"></i>準備中</span>
+          <span><i class="legend-planned"></i>検討中</span>
+          <span><i class="legend-experimental"></i>実験候補</span>
+        </div>
+
+        <div class="services">
+          <ServiceCard
+            category="DEVELOPMENT ENVIRONMENT"
+            title="Coder Workspace"
+            description="研究室PC上に、自分用のコンテナベースLinux開発環境を作成できます。"
+            icon="workspace"
+            status="available"
+            statusLabel="提供中"
+            features={["VS Code Web・ターミナル", "VS Code Desktop接続", "共有GPUを利用可能"]}
+          />
+          <ServiceCard
+            category="AI INFRASTRUCTURE"
+            title="LLM API"
+            description="LiteLLMを利用し、複数のLLMを共通形式で呼び出せる研究室向けAPIを整備します。"
+            icon="api"
+            status="preparing"
+            statusLabel="準備中"
+            features={["OpenAI互換API", "モデルの共通アクセスポイント", "利用者ごとのアクセス管理"]}
+          />
+          <ServiceCard
+            category="AI DEVELOPMENT"
+            title="Coding Agents"
+            description="研究室のLLM APIへ接続済みのコーディングエージェント環境を提供します。"
+            icon="agent"
+            status="preparing"
+            statusLabel="準備中"
+            features={["OpenCodeの標準設定", "Pi Coding Agentの標準設定", "Workspaceからすぐに利用"]}
+          />
+          <ServiceCard
+            category="REMOTE WORKSPACE"
+            title="Desktop Environment"
+            description="GUIが必要な研究ツールをリモートで扱える、簡易デスクトップ環境を検討しています。"
+            icon="desktop"
+            status="planned"
+            statusLabel="検討中"
+            features={["ブラウザからGUI操作", "ローカルへの導入を最小化", "GPUアプリケーション対応"]}
+          />
+          <ServiceCard
+            category="GPU DEMONSTRATION"
+            title="3D & Visualization"
+            description="研究室GPUの活用例として、3D制作・再構成を体験できるデモを計画しています。"
+            icon="demo"
+            status="planned"
+            statusLabel="デモ開発予定"
+            features={["Blenderレンダリング", "Gaussian Splatting", "計算結果の可視化"]}
+          />
+          <ServiceCard
+            category="AGENT EXPERIMENTS"
+            title="Autonomous Agents"
+            description="長期記憶や自律タスクを扱うエージェントが研究支援に活用できるか検証します。"
+            icon="experiment"
+            status="experimental"
+            statusLabel="実験候補"
+            features={["Hermes Agentなどを検証", "長期タスクの実行", "安全性と資源利用を評価"]}
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="getting-started" id="getting-started" aria-labelledby="getting-started-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span>GETTING STARTED</p>
+          <h2 id="getting-started-title">利用を始める</h2>
+        </div>
+        <p>研究室のシステムは承認されたメンバー向けです。申請後、管理者から必要なアカウントと接続方法を案内します。</p>
+      </div>
+      <ol class="steps">
+        <li><span>1</span><div><strong>学生アカウントで申請</strong><p>利用申請フォームへ必要事項を入力します。</p></div></li>
+        <li><span>2</span><div><strong>管理者による確認</strong><p>対象確認後、アクセスに必要な招待を送付します。</p></div></li>
+        <li><span>3</span><div><strong>案内に沿って接続</strong><p>GitHub認証とプライベートネットワークを準備します。</p></div></li>
+        <li><span>4</span><div><strong>Workspaceを作成</strong><p>ブラウザまたはVS Codeから研究を開始します。</p></div></li>
+      </ol>
+      <div class="application-panel">
+        <div>
+          <p class="eyebrow"><span></span>APPLICATION</p>
+          <h2>研究環境を使ってみる。</h2>
+          <p>申請フォームは対象の学生アカウントでログインして回答してください。登録完了までには管理者による確認が必要です。</p>
+        </div>
+        <a class="button button-light" href={applicationUrl} target="_blank" rel="noopener noreferrer">
+          利用申請フォームへ
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5h8v8M15 5 5 15" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand brand-footer" href={Astro.url.pathname}>
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>喜多村研究室 <strong>Docs</strong></span>
+      </a>
+      <p>Kitamura Laboratory Research Systems</p>
+    </div>
+  </footer>
+</BaseLayout>
