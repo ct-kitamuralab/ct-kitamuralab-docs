@@ -1,0 +1,43 @@
+---
+title: 研究システム
+description: 喜多村研究室が提供、準備、検討している研究システムの一覧です。
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+研究活動を支える開発環境、AI基盤、GPU活用環境を段階的に整備しています。提供前のシステムは、計画の変更や中止を含む可能性があります。
+
+## 開発環境
+
+<CardGrid>
+  <Card title="Coder Workspace" icon="laptop">
+    **提供中。** 個人用Linux環境、VS Code Web、VS Code Desktop、RTX A2000 12GBを利用できます。[利用方法を見る](../coder/)
+  </Card>
+  <Card title="Desktop Environment" icon="seti:folder">
+    **検討中。** GUIを必要とする研究ToolをRemoteで操作する簡易Desktop環境を検討しています。
+  </Card>
+</CardGrid>
+
+## AI基盤
+
+<CardGrid>
+  <Card title="LiteLLM API" icon="seti:config">
+    **準備中。** 複数のLLMをOpenAI互換の共通形式で呼び出す研究室向けAPIを整備します。
+  </Card>
+  <Card title="OpenCode / Pi Coding Agent" icon="seti:code-search">
+    **準備中。** 研究室のLLM APIへ接続するCoding Agentの標準設定を準備します。
+  </Card>
+</CardGrid>
+
+## GPU活用とAgent実験
+
+<CardGrid>
+  <Card title="Blender / Gaussian Splatting" icon="seti:image">
+    **デモ開発予定。** 3D Renderingや3D再構成を通して、研究室GPUを体験できるデモを計画しています。
+  </Card>
+  <Card title="Hermes Agent" icon="seti:robot">
+    **実験候補。** 長期記憶や自律的なTask実行を研究支援へ活用できるか検証します。
+  </Card>
+</CardGrid>
+
+各システムの現在の段階は[提供状況](status/)で確認できます。

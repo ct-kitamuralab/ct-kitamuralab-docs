@@ -1,0 +1,31 @@
+---
+title: 提供状況
+description: 喜多村研究室 Research Systemsの現在の提供状況と各Statusの意味です。
+---
+
+import SystemStatus from "../../../components/SystemStatus.astro";
+
+## 現在の状況
+
+<SystemStatus items={[
+  { name: "Coder Workspace", status: "available", label: "提供中", description: "承認された利用者が利用できます。" },
+  { name: "LiteLLM API", status: "preparing", label: "準備中", description: "提供に向けて構成と運用方法を整備しています。" },
+  { name: "OpenCode / Pi Coding Agent", status: "preparing", label: "準備中", description: "標準設定とWorkspaceへの導入方法を準備しています。" },
+  { name: "Desktop Environment", status: "planned", label: "検討中", description: "実現方法、GPU対応、運用負荷を検討しています。" },
+  { name: "Blender / Gaussian Splatting", status: "planned", label: "デモ開発予定", description: "共有GPUの活用を紹介するデモを計画しています。" },
+  { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "安全性とResource利用を含めて検証候補としています。" },
+]} />
+
+## Statusの意味
+
+| Status | 意味 |
+| --- | --- |
+| 提供中 | 承認された対象者が現在利用できます |
+| 準備中 | 提供方針があり、設定や運用方法を整備しています |
+| 検討中 | 実現方法や必要性を評価しています |
+| デモ開発予定 | 研究基盤の活用例としてデモを計画しています |
+| 実験候補 | 検証対象の候補であり、提供は決定していません |
+
+:::note
+準備中、検討中、実験候補の機能について、提供時期は確定していません。利用可能になった機能はこのページで案内します。
+:::

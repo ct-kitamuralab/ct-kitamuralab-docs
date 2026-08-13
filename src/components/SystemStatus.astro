@@ -1,0 +1,26 @@
+---
+type Status = "available" | "preparing" | "planned" | "experimental";
+
+interface Item {
+  name: string;
+  status: Status;
+  label: string;
+  description: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="status-list">
+  {items.map((item) => (
+    <div class="status-row">
+      <strong>{item.name}</strong>
+      <span class={`status-badge is-${item.status}`}>{item.label}</span>
+      <p>{item.description}</p>
+    </div>
+  ))}
+</div>
