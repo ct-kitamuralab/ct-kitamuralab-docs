@@ -32,6 +32,14 @@ opencode
 
 Agentには、目的、対象ファイル、期待する動作、制約を具体的に伝えると、結果を確認しやすくなります。変更提案を受けたら、差分とテスト結果を自分で確認してください。
 
+各AgentのTerminal画面は次の通りです。
+
+![opencode](/screenshots/terminal-opencode-running.png)
+
+![Codex](/screenshots/terminal-codex-running.png)
+
+![Claude Code](/screenshots/terminal-claude-code-running.png)
+
 ## 安全な利用
 
 - API Key、Token、Password、秘密鍵をPromptへ入力しない

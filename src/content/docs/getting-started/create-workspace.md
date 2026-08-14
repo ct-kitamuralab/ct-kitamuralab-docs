@@ -7,13 +7,22 @@ Coderへログインしたら、自分専用の開発環境となるWorkspaceを
 
 ## 作成手順
 
-1. CoderのDashboardでWorkspaceの作成を選択します。
+1. CoderのDashboardで **New workspace** をクリックします。
+
+![New workspaceダイアログでTemplateを選択](/screenshots/coder-new-workspace.png)
+
 2. 管理者から案内されたTemplateを選択します。
-3. 用途が分かるWorkspace名を入力します。
-4. 利用可能な実行先から、負荷状況を考慮して選択します。
-5. 作成を実行し、Workspaceが起動するまで待ちます。
+
+3. Workspace名を入力します。ランダムに生成された名前でも構いません。
+
+![Workspace名、実行ノード、オプションの設定](/screenshots/coder-create-workspace-form.png)
+
+4. 利用可能な実行先（alpha/beta）から、負荷状況を考慮して選択します。
+5. **Create workspace** をクリックして作成を実行し、Workspaceが起動するまで待ちます。
 
 初回はContainer Imageの取得や初期化により、通常より時間がかかる場合があります。
+
+![Workspaceが起動し、VS Code WebやTerminalを開ける状態になります](/screenshots/coder-workspace-running.png)
 
 ## 実行先の選択
 

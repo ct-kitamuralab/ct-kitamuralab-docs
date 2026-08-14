@@ -11,6 +11,8 @@ VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。
 2. Workspace画面に表示される **VS Code Web** を選択します。
 3. ブラウザ内にEditorが表示されることを確認します。
 
+![VS Code Webエディタ画面](/screenshots/vscode-web.png)
+
 ## 初回設定
 
 初めて開いたWorkspaceには、個人の拡張機能や設定がまだ存在しない場合があります。研究内容に必要な拡張機能をWorkspaceごとに導入してください。
