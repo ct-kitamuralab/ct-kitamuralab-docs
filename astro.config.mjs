@@ -24,7 +24,11 @@ export default defineConfig({
       ],
       customCss: ["./src/styles/docs.css"],
       components: {
+        Head: "./src/components/DocsHead.astro",
         Header: "./src/components/DocsHeader.astro",
+        Hero: "./src/components/DocsHero.astro",
+        PageTitle: "./src/components/DocsPageTitle.astro",
+        Footer: "./src/components/DocsFooter.astro",
       },
       lastUpdated: true,
       sidebar: [

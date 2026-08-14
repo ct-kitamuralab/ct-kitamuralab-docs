@@ -1,0 +1,32 @@
+---
+const path = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+const markdownPath = path === base ? `${base}index.md` : `${path.replace(/\/$/, "")}.md`;
+---
+
+<a class="markdown-copy print:hidden" href={markdownPath} data-markdown-copy>
+  <span data-copy-label>Markdownをコピー</span>
+</a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>("[data-markdown-copy]").forEach((link) => {
+    link.addEventListener("click", async (event) => {
+      if (!navigator.clipboard) return;
+
+      event.preventDefault();
+      const label = link.querySelector<HTMLElement>("[data-copy-label]");
+
+      try {
+        const response = await fetch(link.href);
+        if (!response.ok) throw new Error("Markdown could not be loaded.");
+        await navigator.clipboard.writeText(await response.text());
+        if (label) label.textContent = "コピーしました";
+        window.setTimeout(() => {
+          if (label) label.textContent = "Markdownをコピー";
+        }, 2000);
+      } catch {
+        window.location.assign(link.href);
+      }
+    });
+  });
+</script>

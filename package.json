@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "BASE_PATH=${BASE_PATH:-/ct-kitamuralab-docs} astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
