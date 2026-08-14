@@ -7,7 +7,7 @@ description: 手元のVS Code DesktopからCoder Workspaceへ接続する方法�
 
 ## 接続する
 
-1. 手元のPCへ[Visual Studio Code](https://code.visualstudio.com/)をインストールします。
+1. 手元のPCへ[Visual Studio Code](https://code.visualstudio.com/)をインストールします。基本操作は[Visual Studio Code公式ドキュメント](https://code.visualstudio.com/docs)を参照してください。
 2. CoderでWorkspaceをStartします。
 3. Workspace画面から **VS Code Desktop** を選択します。
 4. 拡張機能の導入や接続許可を求められた場合は、画面の案内に従います。

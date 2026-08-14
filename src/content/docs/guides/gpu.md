@@ -3,7 +3,7 @@ title: GPUを利用する
 description: Coder WorkspaceからRTX A2000 12GBを確認し、共有GPUを利用する方法です。
 ---
 
-Coder WorkspaceではRTX A2000 12GBを利用できます。GPUは研究室メンバーで共有するResourceです。
+Coder WorkspaceではRTX A2000 12GBを利用できます。GPUは研究室メンバーで共有するResourceです。`nvidia-smi` の表示項目は[NVIDIAのnvidia-smiドキュメント](https://docs.nvidia.com/deploy/nvidia-smi/)で確認できます。
 
 ## GPUを確認する
 

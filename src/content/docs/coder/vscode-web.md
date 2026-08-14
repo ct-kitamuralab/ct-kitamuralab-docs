@@ -3,7 +3,7 @@ title: VS Code Web
 description: Coder Workspaceをブラウザ上のVS Code Webで開く方法を説明します。
 ---
 
-VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。手元のPCへEditorをインストールせずにWorkspaceを利用できます。
+VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。手元のPCへEditorをインストールせずにWorkspaceを利用できます。Editorの基本操作は[Visual Studio Code公式ドキュメント](https://code.visualstudio.com/docs)を参照してください。
 
 ## 開く
 

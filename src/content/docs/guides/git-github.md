@@ -3,7 +3,7 @@ title: GitとGitHub
 description: WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。
 ---
 
-研究コードはGitで変更履歴を管理し、GitHubなどのRemote Repositoryへ定期的にpushすることを推奨します。
+研究コードはGitで変更履歴を管理し、GitHubなどのRemote Repositoryへ定期的にpushすることを推奨します。Gitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)、Repository運用は[GitHub Docs](https://docs.github.com/ja)を参照してください。
 
 ## 設定を確認する
 
@@ -17,6 +17,8 @@ git config --global --list
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
+
+Workspaceでは、GitHub CLI（`gh`）も利用できます。CLIによるGitHub操作は[GitHub CLI公式マニュアル](https://cli.github.com/manual/)を参照してください。
 
 ## 推奨する運用
 

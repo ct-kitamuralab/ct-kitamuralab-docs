@@ -54,6 +54,8 @@ export default defineConfig({
             { label: "GPUを利用する", slug: "guides/gpu" },
             { label: "GitとGitHub", slug: "guides/git-github" },
             { label: "Python環境", slug: "guides/python" },
+            { label: "開発ツール", slug: "guides/development-tools" },
+            { label: "AI Coding Agent", slug: "guides/ai-coding-agents" },
           ],
         },
         {

@@ -3,7 +3,7 @@ title: Coder Workspace
 description: 喜多村研究室が提供するCoder Workspaceの概要と利用できる機能を説明します。
 ---
 
-Coderは、Server上に開発用のWorkspaceを作成し、ブラウザやVS Code Desktopから利用できる開発環境管理Platformです。
+Coderは、Server上に開発用のWorkspaceを作成し、ブラウザやVS Code Desktopから利用できる開発環境管理Platformです。一般的な仕組みは[Coder公式ドキュメント](https://coder.com/docs)でも確認できます。
 
 ## Workspaceとは
 
@@ -33,3 +33,4 @@ Workspaceは利用者専用のLinux開発環境です。Containerとして起動
 - 初めてWorkspaceを作る: [Workspaceを作成する](../../getting-started/create-workspace/)
 - ブラウザで開発する: [VS Code Web](vscode-web/)
 - データの保存先を確認する: [ファイルと永続化](persistence/)
+- 標準の開発環境を確認する: [開発ツール](../../guides/development-tools/)

@@ -3,7 +3,7 @@ title: Python環境
 description: Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
 ---
 
-PythonのLibraryはProjectごとのVirtual Environmentへ導入します。OS全体へ直接導入するより、依存関係を管理しやすくなります。
+PythonのLibraryはProjectごとのVirtual Environmentへ導入します。OS全体へ直接導入するより、依存関係を管理しやすくなります。仕組みの詳細は[Python公式のvenvドキュメント](https://docs.python.org/3/library/venv.html)と[pip公式ドキュメント](https://pip.pypa.io/en/stable/)を参照してください。
 
 ## Virtual Environmentを作成する
 
