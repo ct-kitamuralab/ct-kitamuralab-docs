@@ -22,12 +22,16 @@ export default defineConfig({
           href: "https://github.com/ct-kitamuralab/ct-kitamuralab-docs",
         },
       ],
+      editLink: {
+        baseUrl: "https://github.com/ct-kitamuralab/ct-kitamuralab-docs/edit/main/",
+      },
       customCss: ["./src/styles/docs.css"],
       components: {
         Head: "./src/components/DocsHead.astro",
         Header: "./src/components/DocsHeader.astro",
         Hero: "./src/components/DocsHero.astro",
         PageTitle: "./src/components/DocsPageTitle.astro",
+        PageSidebar: "./src/components/DocsPageSidebar.astro",
         Footer: "./src/components/DocsFooter.astro",
       },
       lastUpdated: true,

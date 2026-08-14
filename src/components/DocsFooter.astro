@@ -1,11 +1,11 @@
 ---
-import EditLink from "virtual:starlight/components/EditLink";
 import Pagination from "virtual:starlight/components/Pagination";
+import DocsPageActions from "./DocsPageActions.astro";
 ---
 
 <footer class="sl-flex docs-footer">
-  <div class="meta sl-flex">
-    <EditLink />
-  </div>
   <Pagination />
+  <div class="docs-footer-actions lg:sl-hidden">
+    <DocsPageActions />
+  </div>
 </footer>

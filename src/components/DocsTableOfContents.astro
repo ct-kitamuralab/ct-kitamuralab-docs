@@ -1,0 +1,194 @@
+---
+interface TocItem {
+  depth: number;
+  slug: string;
+  text: string;
+  children: TocItem[];
+}
+
+const toc = Astro.locals.starlightRoute.toc;
+const headings: TocItem[] = [];
+
+function flatten(items: TocItem[]) {
+  for (const item of items) {
+    headings.push(item);
+    flatten(item.children);
+  }
+}
+
+if (toc) flatten(toc.items as TocItem[]);
+---
+
+{
+  headings.length > 0 && (
+    <div class="docs-toc" data-docs-toc>
+      <h2 id="docs-on-this-page">{Astro.locals.t("tableOfContents.onThisPage")}</h2>
+      <nav aria-labelledby="docs-on-this-page">
+        <svg class="docs-toc-active-rail" aria-hidden="true" fill="none">
+          <path data-docs-toc-active-path stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <ul>
+          {headings.map((heading, index) => {
+            const previousDepth = index > 0 ? headings[index - 1].depth : heading.depth;
+            const nextDepth = index < headings.length - 1 ? headings[index + 1].depth : heading.depth;
+            const indent = heading.depth - 2;
+            const goingDeeper = heading.depth > previousDepth;
+            const goingShallower = nextDepth < heading.depth;
+
+            return (
+              <li>
+                {goingDeeper && (
+                  <svg
+                    class="docs-toc-curve"
+                    aria-hidden="true"
+                    style={`margin-left: calc(${previousDepth - 2}rem - 0.0625rem); width: ${heading.depth - previousDepth}rem;`}
+                    viewBox="0 0 1 1"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path d="M 0 0 C 0 0.5, 1 0.5, 1 1" vector-effect="non-scaling-stroke" />
+                  </svg>
+                )}
+                <a
+                  href={`#${heading.slug}`}
+                  data-docs-toc-link
+                  data-docs-slug={heading.slug}
+                  style={`margin-left: calc(${indent}rem - 0.125rem);`}
+                >
+                  <span>{heading.text}</span>
+                  <span aria-hidden="true" class="docs-toc-label-measure">{heading.text}</span>
+                </a>
+                {goingShallower && (
+                  <svg
+                    class="docs-toc-curve"
+                    aria-hidden="true"
+                    style={`margin-left: calc(${nextDepth - 2}rem - 0.0625rem); width: ${heading.depth - nextDepth}rem;`}
+                    viewBox="0 0 1 1"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path d="M 1 0 C 1 0.5, 0 0.5, 0 1" vector-effect="non-scaling-stroke" />
+                  </svg>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  )
+}
+
+<script>
+  function initializeToc(root: HTMLElement) {
+    if (root.dataset.initialized) return;
+    root.dataset.initialized = "true";
+
+    const nav = root.querySelector<HTMLElement>("nav");
+    const activePath = root.querySelector<SVGPathElement>("[data-docs-toc-active-path]");
+    const links = [...root.querySelectorAll<HTMLElement>("[data-docs-toc-link]")];
+    if (!nav || !activePath || links.length === 0) return;
+
+    const slugs = links.map((link) => link.dataset.docsSlug ?? "");
+    let segments: { start: number; length: number }[] = [];
+    let totalLength = 0;
+    let currentIndex = -1;
+
+    const measure = (path: string) => {
+      activePath.setAttribute("d", path);
+      return activePath.getTotalLength();
+    };
+
+    const buildRail = () => {
+      const navRect = nav.getBoundingClientRect();
+      const measurements = links.map((link) => {
+        const rect = link.getBoundingClientRect();
+        return {
+          x: rect.left - navRect.left + 1,
+          top: rect.top - navRect.top,
+          bottom: rect.bottom - navRect.top,
+        };
+      });
+
+      let data = "";
+      let cumulative = 0;
+      let previousX = 0;
+      let previousBottom = 0;
+      const nextSegments: { start: number; length: number }[] = [];
+
+      measurements.forEach((current, index) => {
+        if (index === 0) {
+          data += `M ${current.x} ${current.top} `;
+        } else {
+          const previous = measurements[index - 1];
+          const connector = Math.abs(current.x - previous.x) < 0.5
+            ? `L ${current.x} ${current.top} `
+            : `C ${previous.x} ${(previous.bottom + current.top) / 2}, ${current.x} ${(previous.bottom + current.top) / 2}, ${current.x} ${current.top} `;
+          data += connector;
+          cumulative += measure(`M ${previousX} ${previousBottom} ${connector}`);
+        }
+
+        const start = cumulative;
+        const segment = `L ${current.x} ${current.bottom} `;
+        data += segment;
+        cumulative += measure(`M ${current.x} ${current.top} ${segment}`);
+        nextSegments.push({ start, length: cumulative - start });
+        previousX = current.x;
+        previousBottom = current.bottom;
+      });
+
+      activePath.setAttribute("d", data);
+      segments = nextSegments;
+      totalLength = cumulative;
+    };
+
+    const setActive = (index: number, initial = false) => {
+      const segment = segments[index];
+      if (!segment || index === currentIndex) return;
+      links[currentIndex]?.removeAttribute("aria-current");
+      links[index]?.setAttribute("aria-current", "true");
+      activePath.style.strokeDasharray = `${segment.length} ${totalLength + 1}`;
+      activePath.style.strokeDashoffset = `${-segment.start}`;
+      activePath.dataset.ready = "true";
+      if (initial) activePath.dataset.initial = "true";
+      else delete activePath.dataset.initial;
+      currentIndex = index;
+    };
+
+    const updateActive = (initial = false) => {
+      const readingLine = 96;
+      let nextIndex = 0;
+      slugs.forEach((slug, index) => {
+        const heading = document.getElementById(slug);
+        if (heading && heading.getBoundingClientRect().top <= readingLine) nextIndex = index;
+      });
+      const scrollElement = document.scrollingElement ?? document.documentElement;
+      if (scrollElement.scrollTop + window.innerHeight >= scrollElement.scrollHeight - 2) {
+        nextIndex = links.length - 1;
+      }
+      setActive(nextIndex, initial);
+    };
+
+    let frame = 0;
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        updateActive();
+        frame = 0;
+      });
+    };
+
+    const rebuild = () => {
+      buildRail();
+      currentIndex = -1;
+      updateActive(true);
+    };
+
+    buildRail();
+    updateActive(true);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    new ResizeObserver(rebuild).observe(nav);
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-docs-toc]").forEach(initializeToc);
+</script>

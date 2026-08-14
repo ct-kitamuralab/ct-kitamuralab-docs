@@ -1,0 +1,22 @@
+---
+import DocsTableOfContents from "./DocsTableOfContents.astro";
+import DocsPageActions from "./DocsPageActions.astro";
+import DocsMobileTableOfContents from "./DocsMobileTableOfContents.astro";
+
+---
+
+{
+  Astro.locals.starlightRoute.toc && (
+    <>
+      <div class="docs-mobile-toc-container">
+        <DocsMobileTableOfContents />
+      </div>
+      <div class="right-sidebar-panel docs-desktop-toc-container">
+        <div class="sl-container docs-page-sidebar">
+          <DocsTableOfContents />
+          <DocsPageActions />
+        </div>
+      </div>
+    </>
+  )
+}

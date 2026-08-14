@@ -1,0 +1,61 @@
+---
+interface TocItem {
+  depth: number;
+  slug: string;
+  text: string;
+  children: TocItem[];
+}
+
+const toc = Astro.locals.starlightRoute.toc;
+const headings: TocItem[] = [];
+
+function flatten(items: TocItem[]) {
+  for (const item of items) {
+    headings.push(item);
+    flatten(item.children);
+  }
+}
+
+if (toc) flatten(toc.items as TocItem[]);
+---
+
+{
+  headings.length > 0 && (
+    <nav class="docs-mobile-toc" aria-label={Astro.locals.t("tableOfContents.onThisPage")} data-docs-mobile-toc>
+      <select aria-label="セクションへ移動" data-docs-mobile-toc-select>
+        {headings.map((heading) => (
+          <option value={heading.slug}>{`${"  ".repeat(Math.max(0, heading.depth - 2))}${heading.text}`}</option>
+        ))}
+      </select>
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></svg>
+    </nav>
+  )
+}
+
+<script>
+  function initializeMobileToc(root: HTMLElement) {
+    if (root.dataset.initialized) return;
+    root.dataset.initialized = "true";
+
+    const select = root.querySelector<HTMLSelectElement>("[data-docs-mobile-toc-select]");
+    if (!select) return;
+    const slugs = [...select.options].map((option) => option.value);
+
+    const update = () => {
+      let activeSlug = slugs[0];
+      for (const slug of slugs) {
+        const heading = document.getElementById(slug);
+        if (heading && heading.getBoundingClientRect().top <= 96) activeSlug = slug;
+      }
+      select.value = activeSlug;
+    };
+
+    select.addEventListener("change", () => {
+      document.getElementById(select.value)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-docs-mobile-toc]").forEach(initializeMobileToc);
+</script>
