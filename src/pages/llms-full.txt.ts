@@ -2,19 +2,16 @@ import { getCollection } from "astro:content";
 import { stat } from "node:fs/promises";
 import { renderMarkdown } from "../lib/llm-markdown";
 
-export async function getStaticPaths() {
+export async function GET() {
   const entries = await getCollection("docs");
-
-  return Promise.all(
-    entries.filter((entry) => entry.id !== "index").map(async (entry) => {
+  const content = await Promise.all(
+    entries.map(async (entry) => {
       const updated = (await stat(entry.filePath!)).mtime.toISOString().slice(0, 10);
-      return { params: { slug: entry.id }, props: { content: renderMarkdown(entry, updated) } };
+      return renderMarkdown(entry, updated);
     }),
   );
-}
 
-export function GET({ props }: { props: { content: string } }) {
-  return new Response(props.content, {
+  return new Response(content.join("\n---\n\n"), {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
     },
