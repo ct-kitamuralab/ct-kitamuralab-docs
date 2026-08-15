@@ -10,7 +10,7 @@ Coder Workspaceでは、TerminalのみでCodexを利用します。このペー�
 Codexは無料のChatGPTアカウントで利用できます（回数制限あり）。多くの利用を想定する場合は、ChatGPT Plus / Pro / Business / Enterprise のサブスクリプションを利用します。
 
 :::note
-Codex以外のAgent（Claude Code、OpenCode）の料金は、[AI Coding Agent](../ai-coding-agents/)の「利用料金とプラン」を参照してください。
+Codex以外のAgent（Claude Code、OpenCode）の料金は、[AI Coding Agent](../../ai-coding-agents/)の「利用料金とプラン」を参照してください。
 :::
 
 ## ログイン方法の比較
@@ -78,6 +78,6 @@ Device Codeは15分で失効します。また、Device Codeは一度きりの�
 
 ## Next steps
 
-- Agentの比較と安全な利用: [AI Coding Agent](../ai-coding-agents/)
+- Agentの比較と安全な利用: [AI Coding Agent](../../ai-coding-agents/)
 - 変更履歴の管理: [GitとGitHub](../git-github/)
 - トラブルシューティング: [トラブルシューティング](../../operations/troubleshooting/)
