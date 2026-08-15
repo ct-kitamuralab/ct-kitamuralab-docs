@@ -59,6 +59,7 @@ export default defineConfig({
         {
           label: "開発ガイド",
           items: [
+            { label: "Linuxターミナルの基本", slug: "guides/linux-terminal" },
             { label: "GPUを利用する", slug: "guides/gpu" },
             { label: "GitとGitHub", slug: "guides/git-github" },
             { label: "Python環境", slug: "guides/python" },
