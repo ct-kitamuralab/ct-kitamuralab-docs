@@ -24,7 +24,7 @@ description: 管理者から案内された接続先を使ってCoderへ初め�
 - 申請時と同じGitHubアカウントを使用している
 - 別のGitHubアカウントがブラウザに残っていない
 
-それでも解決しない場合は、[トラブルシューティング](../operations/troubleshooting/)の「ログインできない」を参照してください。GitHubユーザー名と画面に表示された状態を管理者へ伝えてください。Password、Token、秘密鍵は送らないでください。
+それでも解決しない場合は、[トラブルシューティング](../../operations/troubleshooting/)の「ログインできない」を参照してください。GitHubユーザー名と画面に表示された状態を管理者へ伝えてください。Password、Token、秘密鍵は送らないでください。
 
 ## Next steps
 

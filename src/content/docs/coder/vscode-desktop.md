@@ -3,7 +3,7 @@ title: VS Code Desktop
 description: 手元のVS Code DesktopからCoder Workspaceへ接続する方法を説明します。
 ---
 
-普段使用しているVS Code Desktopから、Coder上のWorkspaceへRemote接続できます。接続には[Tailscale](https://tailscale.com/)が接続済みであることが必要です。設定方法は[利用前の準備](../getting-started/prerequisites/)を参照してください。
+普段使用しているVS Code Desktopから、Coder上のWorkspaceへRemote接続できます。接続には[Tailscale](https://tailscale.com/)が接続済みであることが必要です。設定方法は[利用前の準備](../../getting-started/prerequisites/)を参照してください。
 
 ## 接続する
 

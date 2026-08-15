@@ -42,7 +42,7 @@ Workspaceが起動したら、次の手順で動作を確認します。
 2. [VS Code Web](../../coder/vscode-web/)を開いて、Editorが表示されることを確認します。
 3. DashboardのWorkspace項目で、CPU、RAM、Disk、GPUのUsage表示が更新されていることを確認します。
 
-Workspaceが長時間Startingのままになる場合は、Deleteせず、[トラブルシューティング](../operations/troubleshooting/)に従って管理者へWorkspace名と表示状態を伝えてください。
+Workspaceが長時間Startingのままになる場合は、Deleteせず、[トラブルシューティング](../../operations/troubleshooting/)に従って管理者へWorkspace名と表示状態を伝えてください。
 
 ## Next steps
 

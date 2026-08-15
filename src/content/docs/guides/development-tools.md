@@ -57,7 +57,7 @@ npm init -y
 
 ## 保存場所
 
-Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存してください。保存先のルールは[ファイルと永続化](../coder/persistence/)で説明しています。
+Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存してください。保存先のルールは[ファイルと永続化](../../coder/persistence/)で説明しています。
 
 ## Next steps
 

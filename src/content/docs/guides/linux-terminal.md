@@ -162,10 +162,10 @@ README.md
 
 Project、設定、Virtual Environmentは、永続化される `/home/coder` 以下に保存してください。Workspaceを再構築するとOS全体への変更が失われる場合があります。
 
-[ファイルと永続化](../coder/persistence/)では、Workspaceで保持されるファイルの保存先とBackup方法を説明しています。
+[ファイルと永続化](../../coder/persistence/)では、Workspaceで保持されるファイルの保存先とBackup方法を説明しています。
 
 ## Next steps
 
 - [GitとGitHub](git-github/) — 研究コードの変更履歴を記録し、Remote Repositoryへ保存する基本手順です。
 - [Python環境](python/) — ProjectごとにPython Virtual Environmentを作成し、依存関係を再現可能にする方法です。
-- [ファイルと永続化](../coder/persistence/) — Workspaceの再構築後も残すべきファイルの保存先を確認できます。
+- [ファイルと永続化](../../coder/persistence/) — Workspaceの再構築後も残すべきファイルの保存先を確認できます。

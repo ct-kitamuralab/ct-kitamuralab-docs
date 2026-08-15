@@ -12,7 +12,7 @@ GPUやWorkspaceは研究室で共有するResourceです。他の利用者に影
 - 作業終了後はWorkspaceをStopする
 - 不要なProcessやJobを放置しない
 - 他の利用者のWorkspaceやProcessへ干渉しない
-- GPUを長時間使用する場合は、他の利用者と調整する。確認コマンドとマナーは[GPUを利用する](../guides/gpu/)で説明しています
+- GPUを長時間使用する場合は、他の利用者と調整する。確認コマンドとマナーは[GPUを利用する](../../guides/gpu/)で説明しています
 
 ## Data
 
@@ -40,7 +40,7 @@ Workspaceは利用者ごとに分離されていますが、物理的には研�
 次の制限は、他の利用者の環境とSystem全体を保護するための設計です。
 
 - WorkspaceからHost側のDockerを操作することはできません
-- Workspaceの実行先は作成後に変更できません。変更が必要な場合は新しいWorkspaceへ移行します（[Workspaceの操作](../coder/lifecycle/)を参照）
+- Workspaceの実行先は作成後に変更できません。変更が必要な場合は新しいWorkspaceへ移行します（[Workspaceの操作](../../coder/lifecycle/)を参照）
 - Coderへのログインは、許可されたGitHub Organizationのメンバーに限定されています
 
 ## Next steps
