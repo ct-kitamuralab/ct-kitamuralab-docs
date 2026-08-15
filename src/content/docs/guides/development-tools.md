@@ -55,5 +55,9 @@ gh repo clone OWNER/REPOSITORY
 :::
 
 ## 保存場所
-
 Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存してください。Workspaceを再構築した場合に失われる可能性がある場所へ、必要なデータを置かないでください。詳細は[ファイルと永続化](../coder/persistence/)を参照してください。
+
+## Next steps
+
+- [Python環境](python/) — Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
+- [AI Coding Agent](ai-coding-agents/) — Workspaceに導入されているAI Coding Agentの用途、安全な利用方法、公式ドキュメントを案内します。

@@ -2,6 +2,7 @@
 title: Workspaceの操作
 description: WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
 ---
+WorkspaceはStart、Stop、Restart、Deleteの4つの操作で運用します。
 
 ## Start
 
@@ -12,6 +13,10 @@ description: WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方
 実行中のWorkspaceを停止します。日々の作業終了時はStopしてください。`/home/coder` のデータは保持されます。
 
 GPUを使用するProcessを起動したまま放置すると、同じGPUを利用する他のメンバーへ影響します。
+
+:::caution
+GPUを使うProcessを起動した状態でStopする場合は、Processを停止してから実行してください。
+:::
 
 ## Restart
 
@@ -34,3 +39,8 @@ DeleteによってWorkspaceの保存データが削除される可能性があ�
 3. Gitで管理していないDataを安全な方法で移行します。
 4. 新しいWorkspaceで動作とDataを確認します。
 5. Backupを確認してから古いWorkspaceを削除します。
+
+## Next steps
+
+- [ファイルと永続化](persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。
+- [トラブルシューティング](../../operations/troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。

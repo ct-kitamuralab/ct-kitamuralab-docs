@@ -2,6 +2,7 @@
 title: ファイルと永続化
 description: Workspace内で保持されるファイルの保存先とBackup方法を説明します。
 ---
+Workspace内では、保存先によってデータが保持されるかどうかが変わります。
 
 ## 保持される保存先
 
@@ -37,3 +38,8 @@ WorkspaceのStorageだけを唯一の保存先にしないでください。
 :::caution
 Deleteの前にBackupを完了してください。削除後の復元を前提に運用しないでください。
 :::
+
+## Next steps
+
+- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
+- [GitとGitHub](../../guides/git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。

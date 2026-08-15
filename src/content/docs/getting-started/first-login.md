@@ -2,6 +2,7 @@
 title: 初回ログイン
 description: 管理者から案内された接続先を使ってCoderへ初めてログインする手順です。
 ---
+管理者から案内された接続先を使って、Coderへ初めてログインする手順です。本ガイドを完了すると、Workspaceを作成できる状態になります。
 
 ## ログイン手順
 
@@ -24,3 +25,7 @@ description: 管理者から案内された接続先を使ってCoderへ初め�
 - 別のGitHubアカウントがブラウザに残っていない
 
 解決しない場合は、GitHubユーザー名と画面に表示された状態を管理者へ伝えてください。Password、Token、秘密鍵は送らないでください。
+
+## Next steps
+
+- [Workspaceを作成する](create-workspace/) — Coderへログインし、研究用のWorkspaceを作成する手順です。

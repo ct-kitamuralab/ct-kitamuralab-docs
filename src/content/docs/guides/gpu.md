@@ -33,3 +33,8 @@ RTX A2000 12GBとDriver情報が表示されれば、GPUを利用できます。
 - Workspace名
 - 作成時に選択した実行先
 - `nvidia-smi` の出力またはError Message
+
+## Next steps
+
+- [利用ルール](../../operations/rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
+- [トラブルシューティング](../../operations/troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。

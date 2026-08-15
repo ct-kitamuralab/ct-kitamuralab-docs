@@ -36,3 +36,8 @@ Virtual Environment自体をGitへCommitするのではなく、依存関係を�
 ## 保存場所
 
 Virtual EnvironmentとProjectは、永続化される `/home/coder` 以下へ作成してください。OS全体へ行った変更は、Workspaceの再構築で失われる可能性があります。
+
+## Next steps
+
+- [開発ツール](development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
+- [GitとGitHub](git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。

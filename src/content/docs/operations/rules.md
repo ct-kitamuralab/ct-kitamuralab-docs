@@ -6,6 +6,7 @@ description: 共有GPU、研究Data、秘密情報を安全に扱うための利
 システムは複数の研究室メンバーが共有する環境です。他の利用者と研究Dataを守るため、次のルールに従ってください。
 
 ## 共有Resource
+GPUやWorkspaceは研究室で共有するResourceです。他の利用者に影響が出ないよう使い分けてください。
 
 - 作業終了後はWorkspaceをStopする
 - GPUを使う重い処理を長時間実行する場合は、他の利用者と調整する
@@ -13,6 +14,7 @@ description: 共有GPU、研究Data、秘密情報を安全に扱うための利
 - 他の利用者のWorkspaceやProcessへ干渉しない
 
 ## Data
+研究Dataは失われないよう、共有環境であることを前提に管理してください。
 
 - 研究コードはGitHubなどへBackupする
 - WorkspaceをDeleteする前に必要なDataを退避する
@@ -20,6 +22,7 @@ description: 共有GPU、研究Data、秘密情報を安全に扱うための利
 - 共有環境であることを前提に、保存する情報を判断する
 
 ## 秘密情報
+秘密情報はWorkspace内でも扱いに注意してください。
 
 - API Key、Token、Password、秘密鍵をGitへCommitしない
 - 秘密情報をSource Codeへ直接書かない
@@ -33,3 +36,8 @@ Workspaceは利用者ごとに分離されていますが、物理的には研�
 ## 制限
 
 WorkspaceからHost側のDockerを操作することはできません。これは他の利用者の環境とSystem全体を保護するための設計です。
+
+## Next steps
+
+- [トラブルシューティング](troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
+- [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。

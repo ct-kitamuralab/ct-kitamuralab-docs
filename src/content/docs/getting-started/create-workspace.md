@@ -3,7 +3,7 @@ title: Workspaceを作成する
 description: Coderへログインし、研究用のWorkspaceを作成する手順です。
 ---
 
-Coderへログインしたら、自分専用の開発環境となるWorkspaceを作成します。
+Coderへログインしたら、自分専用の開発環境となるWorkspaceを作成します。本ガイドを完了すると、VS Code Webから研究コードの実行を開始できます。
 
 ## 作成手順
 
@@ -35,3 +35,8 @@ Coderへログインしたら、自分専用の開発環境となるWorkspaceを
 ## 作成後の確認
 
 Workspaceが起動したら、最初に[VS Code Web](../../coder/vscode-web/)を開いて動作を確認することを推奨します。
+
+## Next steps
+
+- [VS Code Web](../../coder/vscode-web/) — Coder Workspaceをブラウザ上のVS Code Webで開く方法を説明します。
+- [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。

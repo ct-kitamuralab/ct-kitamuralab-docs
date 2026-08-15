@@ -5,6 +5,8 @@ description: 喜多村研究室が提供するCoder Workspaceの概要と利用�
 
 Coderは、Server上に開発用のWorkspaceを作成し、ブラウザやVS Code Desktopから利用できる開発環境管理Platformです。一般的な仕組みは[Coder公式ドキュメント](https://coder.com/docs)でも確認できます。
 
+本ページでは、喜多村研究室が提供するCoder Workspaceの概要と利用可能な機能を紹介しています。初めて利用する場合は、[利用対象と申請](../../getting-started/application/)から進めてください。
+
 ## Workspaceとは
 
 Workspaceは利用者専用のLinux開発環境です。Containerとして起動し、他の利用者のWorkspaceとはファイル、Process、Editorの接続先が分離されます。
@@ -28,7 +30,7 @@ Workspaceは利用者専用のLinux開発環境です。Containerとして起動
 4. 永続化される場所にProjectを保存します。
 5. 作業終了後にWorkspaceをStopします。
 
-## 次に読む
+## Next steps
 
 - 初めてWorkspaceを作る: [Workspaceを作成する](../../getting-started/create-workspace/)
 - ブラウザで開発する: [VS Code Web](vscode-web/)

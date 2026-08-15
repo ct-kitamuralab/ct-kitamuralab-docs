@@ -51,7 +51,7 @@ Agentには、目的、対象ファイル、期待する動作、制約を具体
 研究室向けLLM APIの接続設定は準備中です。認証情報、接続先、利用可否は管理者からの案内に従ってください。
 :::
 
-## 次に読む
+## Next steps
 
 - PackageやCLIの標準環境を確認する: [開発ツール](../development-tools/)
 - 変更履歴とBackupを管理する: [GitとGitHub](../git-github/)

@@ -38,3 +38,8 @@ ProjectやNotebookなど、保持したいファイルは次のDirectory以下�
 ## 開かない場合
 
 ブラウザの再読み込み、別のブラウザ、Private Windowを試します。それでも開かない場合はWorkspaceのTerminalが利用できるか確認し、結果を管理者へ伝えてください。
+
+## Next steps
+
+- [VS Code Desktop](vscode-desktop/) — 手元のVS Code DesktopからCoder Workspaceへ接続する方法を説明します。
+- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。

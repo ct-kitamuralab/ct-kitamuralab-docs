@@ -22,3 +22,8 @@ VS Code Desktopから接続できない場合は、先に[VS Code Web](vscode-we
 :::tip
 初回利用時はVS Code WebでWorkspaceが正常に動作することを確認してから、VS Code Desktopを設定すると問題を切り分けやすくなります。
 :::
+
+## Next steps
+
+- [VS Code Web](vscode-web/) — Coder Workspaceをブラウザ上のVS Code Webで開く方法を説明します。
+- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。

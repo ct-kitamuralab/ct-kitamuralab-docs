@@ -47,6 +47,7 @@ Terminalで `nvidia-smi` を実行し、次の情報を管理者へ伝えます�
 - WorkspaceをDeleteしていないか確認する
 
 ## 管理者へ伝える情報
+管理者へ連絡する際は、問題を特定できる情報を一緒に送ってください。
 
 - GitHubユーザー名
 - Workspace名
@@ -58,3 +59,8 @@ Terminalで `nvidia-smi` を実行し、次の情報を管理者へ伝えます�
 :::danger
 Password、API Key、Token、秘密鍵などのCredentialは送らないでください。ScreenshotやLogを送る前にも秘密情報が含まれていないか確認してください。
 :::
+
+## Next steps
+
+- [利用ルール](rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
+- [GPUを利用する](../../guides/gpu/) — Coder WorkspaceからRTX A2000 12GBを確認し、共有GPUを利用する方法です。
