@@ -34,11 +34,11 @@ Agentには、目的、対象ファイル、期待する動作、制約を具体
 
 各AgentのTerminal画面は次の通りです。
 
-![opencode](/screenshots/terminal-opencode-running.png)
+![opencode](../../../assets/screenshots/terminal-opencode-running.png)
 
-![Codex](/screenshots/terminal-codex-running.png)
+![Codex](../../../assets/screenshots/terminal-codex-running.png)
 
-![Claude Code](/screenshots/terminal-claude-code-running.png)
+![Claude Code](../../../assets/screenshots/terminal-claude-code-running.png)
 
 ## 安全な利用
 
