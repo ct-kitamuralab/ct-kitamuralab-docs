@@ -8,7 +8,7 @@ PythonのLibraryはProjectごとのVirtual Environmentへ導入します。OS全
 ## Virtual Environmentを作成する
 
 ```bash
-# プロジェクトのディレクトリに移動 cd = Change Directoryの略 のハズ
+# プロジェクトのディレクトリに移動 cd = Change Directoryの略
 cd /home/coder/projects/my-research
 # Pythonの仮想環境(venv = Virtual ENVironment)を作成
 python3 -m venv .venv
@@ -37,13 +37,35 @@ Virtual Environmentの終了は `deactivate` コマンドで実行します。Te
 
 Projectに応じて、次のいずれかをRepositoryへ保存してください。
 
-# TODO requirements.txtの自動作成の追加
-# TODO uvでの例も追加
-
 - `requirements.txt`
 - `pyproject.toml`
 - `environment.yml`
 - 使用しているPackage ManagerのLock File
+
+### requirements.txtを作成する
+
+`pip freeze` でVirtual EnvironmentのPackage一覧を `requirements.txt` へ書き出します。
+
+```bash
+pip freeze > requirements.txt
+```
+
+:::note
+`pip freeze` はVirtual Environment内の全Packageがバージョン付きで記録されます。依存関係に由来するPackageも含むため、Commit前に不要なものを見直してください。
+:::
+
+### uvを使う場合
+
+PythonのProject管理を行う[uv](https://docs.astral.sh/uv/)では、Virtual Environmentの作成とPackage管理をまとめて実行できます。
+
+```bash
+# Projectを作成する(pyproject.tomlが作成される)
+uv init
+# Packageを追加する(pyproject.tomlへ記録される)
+uv add <package-name>
+```
+
+Packageは `pyproject.toml` へ、正確なバージョンはuvが管理するLock Fileへ記録されます。
 
 :::tip
 Virtual Environment自体をGitへCommitするのではなく、依存関係を定義するファイルから再作成できる状態にします。
