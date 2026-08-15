@@ -3,20 +3,30 @@ title: トラブルシューティング
 description: Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
 ---
 
-問題が発生した場合は、WorkspaceをDeleteする前に状態を確認して管理者へ連絡してください。
+問題が発生した場合は、WorkspaceをDeleteする前に状態を確認して管理者へ連絡してください。各症状の手順へ進む前に、まず共通の確認項目を済ませてください。
+
+## 共通の確認項目
+
+1. Tailscaleが接続済み（Connected）になっているか確認する
+2. CoderのDashboardで、WorkspaceがRunningになっているか確認する
 
 ## Coderを開けない
 
-1. 管理者から案内された接続環境が有効か確認します。
-2. 案内された接続先を使用しているか確認します。
-3. ブラウザを再読み込みします。
-4. 別のNetworkやブラウザでも確認します。
+1. Tailscaleが接続済みであることを確認する
+2. 管理者から案内された接続先を使用しているか確認する
+3. ブラウザを再読み込みする
+4. 別のNetworkやブラウザでも確認する
+
+会社・大学・公共Wi-FiなどのNetworkでは接続が不安定になることがあります。Tailscaleは接続されていても接続先が開けない場合は、別のNetworkで試してください。
 
 ## ログインできない
 
-- 必要な招待を承認済みか確認する
-- 申請時と同じGitHubアカウントを使用する
-- ブラウザに別のGitHubアカウントが残っていないか確認する
+- GitHub Organizationへの招待を承認済みか確認する
+- Tailscale Shareを承認済みか確認する
+- 申請時と同じGitHubアカウントを使用している
+- 別のGitHubアカウントがブラウザに残っていない
+
+招待を承認済みでもログインできない場合は、GitHubユーザー名と画面の状態を管理者へ伝えてください。
 
 ## Workspaceを利用できない
 
@@ -24,13 +34,15 @@ Workspaceが長時間Startingのまま、またはRunningと表示されても�
 
 ## VS Code Webを開けない
 
-- ページを再読み込みする
-- 別のブラウザまたはPrivate Windowを試す
-- WorkspaceのTerminalを開けるか確認する
+1. ページを再読み込みする
+2. 別のブラウザまたはPrivate Windowで開く
+3. WorkspaceのTerminalを開けるか確認する
+
+Terminalも開けない場合はWorkspace自体の接続に問題があると考えられるので、管理者へ連絡してください。
 
 ## VS Code Desktopを開けない
 
-先にVS Code Webを確認します。VS Code Webのみ利用できる場合は、手元のVS Code、Coder関連の拡張機能、認証状態を確認してください。
+先にVS Code Webを確認します。VS Code Webは開けてDesktopだけ開けない場合は、手元のVS Code、Coder関連の拡張機能、認証状態を確認してください。
 
 ## GPUを利用できない
 

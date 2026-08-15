@@ -5,13 +5,16 @@ description: 喜多村研究室が提供、準備、検討している研究シ�
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
-研究活動を支える開発環境、AI基盤、GPU活用環境を段階的に整備しています。提供前のシステムは、計画の変更や中止を含む可能性があります。
+承認が完了すれば、今すぐCoder Workspaceと共有GPUを利用できます。その後のステップとして、AI基盤とGPU活用環境を整備しています。提供前のシステムは、計画の変更や中止を含む可能性があります。
 
 ## 開発環境
 
 <CardGrid>
   <Card title="Coder Workspace" icon="laptop">
     **提供中。** 個人用Linux環境、VS Code Web、VS Code Desktop、RTX A2000 12GBを利用できます。[利用方法を見る](../coder/)
+  </Card>
+  <Card title="開発ツールの拡充" icon="seti:package">
+    **準備中。** pnpm、Java、Rust、C/C++、C#、RをWorkspaceへ順次追加する予定です。
   </Card>
   <Card title="Desktop Environment" icon="seti:folder">
     **検討中。** GUIを必要とする研究ToolをRemoteで操作する簡易Desktop環境を検討しています。
@@ -21,11 +24,14 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
 ## AI基盤
 
 <CardGrid>
+  <Card title="AI Coding Agent CLI" icon="seti:code-search">
+    **提供中。** OpenCode、Claude Code、CodexはWorkspaceへ初期インストールされています。[利用方法を見る](../guides/ai-coding-agents/)
+  </Card>
   <Card title="LiteLLM API" icon="seti:config">
     **準備中。** 複数のLLMをOpenAI互換の共通形式で呼び出す研究室向けAPIを整備します。
   </Card>
-  <Card title="OpenCode / Pi Coding Agent" icon="seti:code-search">
-    **準備中。** 研究室のLLM APIへ接続するCoding Agentの標準設定を準備します。
+  <Card title="Coding Agent標準設定" icon="seti:config">
+    **準備中。** LiteLLM APIの提供後、OpenCodeなどから研究室のLLMを初期状態で利用できる接続設定をWorkspaceへ組み込む予定です。
   </Card>
 </CardGrid>
 

@@ -21,7 +21,7 @@ import SystemStatus from "../../components/SystemStatus.astro";
 
 ## 研究のための共通基盤
 
-喜多村研究室では、個人のPCごとに開発環境を作り直す代わりに、研究室が管理する共通の計算環境を利用できます。Coder上の独立したWorkspaceから、ブラウザやVS Code Desktopで研究コードを実行できます。
+喜多村研究室では、個人のPCごとに開発環境を作り直す代わりに、研究室が管理する共通の計算環境を利用できます。Coder上の独立したWorkspaceから、ブラウザやVS Code Desktopで研究コードを実行できます。Workspaceは必要時に起動され、保存されたファイルはWorkspaceごとに保持されます。
 
 <div class="quick-facts">
   <div><span>Development</span><strong>Coder Workspace</strong></div>
@@ -31,7 +31,7 @@ import SystemStatus from "../../components/SystemStatus.astro";
 
 <CardGrid>
   <Card title="すぐに使える" icon="rocket">
-    Linuxと[開発ツール](guides/development-tools/)を備えたWorkspaceを作成し、初期構築を減らして研究コードの実行から始められます。<br /><small>利用可能: Python、Node.js、Git、GitHub CLI、VS Code<br />Agent Harness: OpenCode、Claude Code、Codex</small>
+    Linuxと[開発ツール](guides/development-tools/)を備えたWorkspaceを作成し、初期構築を減らして研究コードの実行から始められます。
   </Card>
   <Card title="環境を分離できる" icon="seti:lock">
     依存ライブラリや実験環境はWorkspaceごとに分離され、手元のPCへ複雑なパッケージを導入する必要がありません。
@@ -49,9 +49,10 @@ import SystemStatus from "../../components/SystemStatus.astro";
 現在利用できる機能と、準備・検討中の研究システムを区別して掲載しています。
 
 <SystemStatus items={[
-  { name: "Coder Workspace", status: "available", label: "提供中", description: "個人用Linux環境、VS Code、共有GPUを提供しています。" },
+  { name: "Coder Workspace", status: "available", label: "提供中", description: "Python、Node.jsなどを導入したLinux環境、VS Code、共有GPUを提供しています。" },
+  { name: "AI Coding Agent CLI", status: "available", label: "提供中", description: "OpenCode、Claude Code、CodexをWorkspaceへ初期インストールしています。" },
   { name: "LiteLLM API", status: "preparing", label: "準備中", description: "複数のLLMを共通形式で利用するAPIを整備しています。" },
-  { name: "OpenCode / Pi Coding Agent", status: "preparing", label: "準備中", description: "研究室向けの標準設定を準備しています。" },
+  { name: "Coding Agent標準設定", status: "preparing", label: "準備中", description: "研究室のLLM APIを初期状態から利用できる接続設定を準備しています。" },
   { name: "Desktop Environment", status: "planned", label: "検討中", description: "GUIを必要とする研究ツール向けの環境を検討しています。" },
   { name: "Blender / Gaussian Splatting", status: "planned", label: "デモ開発予定", description: "共有GPUを活用する3Dデモを計画しています。" },
   { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "長期タスクに対応するAgentの活用を検討しています。" },

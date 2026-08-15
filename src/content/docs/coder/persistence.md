@@ -6,33 +6,39 @@ Workspace内では、保存先によってデータが保持されるかどう�
 
 ## 保持される保存先
 
-WorkspaceをStopしても、次のDirectory以下に保存したデータは保持されます。
+| 場所 | Stop後に保持されるか | 使い道 |
+| --- | --- | --- |
+| `/home/coder` 以下 | はい | 研究ファイルはすべてこのDirectory以下へ保存します |
+| その他の場所（`/tmp` など） | いいえ | WorkspaceのStopや再構築で失われます |
 
-```text
-/home/coder
-```
-
-研究コード、Git Repository、設定ファイル、Notebook、Python Virtual Environmentなどは、原則としてこのDirectory以下へ保存してください。
+研究コード、Git Repository、設定ファイル、Notebook、Python Virtual Environmentなどは、原則として `/home/coder` 以下へ保存してください。
 
 :::danger
 `/home/coder` 以外に保存したデータは、Workspaceの再構築やStopに伴って失われる可能性があります。
 :::
 
-## 操作とデータ
+各操作（Start、Stop、Restart、Delete）で `/home/coder` がどのように扱われるかは、[Workspaceの操作](lifecycle/)で説明しています。
 
-| 操作 | `/home/coder`の扱い |
-| --- | --- |
-| Stop | 保持されます |
-| Start | Stop前のデータを再利用します |
-| Restart | 基本的に保持されます |
-| Delete | Workspaceと保存データが削除される可能性があります |
+:::caution
+Deleteに加え、管理者による保存Volumeの削除でも保存データは失われます。WorkspaceをDeleteする前にBackupを完了してください。
+:::
+
+## Disk使用量を確認する
+
+`/home/coder` の使用容量は、WorkspaceのTerminalで次を実行して確認できます。
+
+```bash
+df -h /home/coder
+```
+
+`Use%` の列で使用率が表示されます。空き容量が少なくなったら、不要なファイルを削除するか、管理者へ相談してください。
 
 ## Backupする
 
 WorkspaceのStorageだけを唯一の保存先にしないでください。
 
 - 研究コードはGitHubなどのRemote Repositoryへpushする
-- Gitで管理しないDataは、承認された別の保存先へ定期的に退避する
+- Gitで管理しないDataは、ローカルのPCなど別の保存先へ定期的に退避する
 - WorkspaceをDeleteする前に、必要なファイルを必ず確認する
 
 :::caution

@@ -5,12 +5,16 @@ description: 喜多村研究室 システムの現在の提供状況と各Status
 
 import SystemStatus from "../../../components/SystemStatus.astro";
 
+最終確認: 2026-08-15。このページのStatusと実際の状態に相違がある場合は、管理者へ伝えてください。
+
 ## 現在の状況
 
 <SystemStatus items={[
   { name: "Coder Workspace", status: "available", label: "提供中", description: "承認された利用者が利用できます。" },
+  { name: "AI Coding Agent CLI", status: "available", label: "提供中", description: "OpenCode、Claude Code、CodexをWorkspaceへ初期インストールしています。" },
+  { name: "開発ツールの拡充", status: "preparing", label: "準備中", description: "pnpm、Java、Rust、C/C++、C#、Rの追加を予定しています。" },
   { name: "LiteLLM API", status: "preparing", label: "準備中", description: "提供に向けて構成と運用方法を整備しています。" },
-  { name: "OpenCode / Pi Coding Agent", status: "preparing", label: "準備中", description: "標準設定とWorkspaceへの導入方法を準備しています。" },
+  { name: "Coding Agent標準設定", status: "preparing", label: "準備中", description: "研究室のLLM APIを初期状態から利用できる接続設定をWorkspaceへ組み込む予定です。" },
   { name: "Desktop Environment", status: "planned", label: "検討中", description: "実現方法、GPU対応、運用負荷を検討しています。" },
   { name: "Blender / Gaussian Splatting", status: "planned", label: "デモ開発予定", description: "共有GPUの活用を紹介するデモを計画しています。" },
   { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "安全性とResource利用を含めて検証候補としています。" },

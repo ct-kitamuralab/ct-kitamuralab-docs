@@ -7,11 +7,11 @@ Coder Workspaceには、Terminalから利用するAI Coding Agentが導入され
 
 ## 利用できるAgent
 
-| Agent | 起動Command | 公式ドキュメント |
-| --- | --- | --- |
-| [OpenCode](https://opencode.ai/) | `opencode` | [OpenCode Docs](https://opencode.ai/docs) |
-| [Claude Code](https://www.anthropic.com/claude-code) | `claude` | [Claude Code Docs](https://docs.anthropic.com/en/docs/claude-code/overview) |
-| [Codex](https://openai.com/codex/) | `codex` | [Codex Docs](https://developers.openai.com/codex/) |
+| Agent | 起動Command | 用途 | 公式ドキュメント |
+| --- | --- | --- | --- |
+| [OpenCode](https://opencode.ai/) | `opencode` | Terminalで操作するコーディングAgent。複数のLLMに対応 | [OpenCode Docs](https://opencode.ai/docs) |
+| [Claude Code](https://www.anthropic.com/claude-code) | `claude` | 大規模なコードベースの編集・リファクタリングに向くAgent | [Claude Code Docs](https://docs.anthropic.com/en/docs/claude-code/overview) |
+| [Codex](https://openai.com/codex/) | `codex` | OpenAIのモデルを使うコーディングAgent | [Codex Docs](https://developers.openai.com/codex/) |
 
 導入済みかどうかは、次のCommandで確認できます。
 
@@ -20,6 +20,8 @@ opencode --version
 claude --version
 codex --version
 ```
+
+各Commandでバージョン情報が表示されれば、そのAgentを利用できます。
 
 ## 基本的な使い方
 
@@ -30,7 +32,11 @@ cd /home/coder/projects/my-research
 opencode
 ```
 
-Agentには、目的、対象ファイル、期待する動作、制約を具体的に伝えると、結果を確認しやすくなります。変更提案を受けたら、差分とテスト結果を自分で確認してください。
+Agentへの依頼では、**目的、対象ファイル、期待する動作、制約**を具体的に伝えると、結果を確認しやすくなります。例えば次のように依頼します。
+
+> `src/analysis.py` の `main` 関数を、引数で入力CSVのパスを受け取る形に修正してください。既存の関数は削除せず、Python 3.12互換でお願いします。
+
+変更提案を受けたら、差分とテスト結果を自分で確認してください。
 
 各AgentのTerminal画面は次の通りです。
 
@@ -48,7 +54,7 @@ Agentには、目的、対象ファイル、期待する動作、制約を具体
 - 生成コードをCommitする前に、`git diff`とテスト結果を確認する
 
 :::note
-研究室向けLLM APIの接続設定は準備中です。認証情報、接続先、利用可否は管理者からの案内に従ってください。
+OpenCode、Claude Code、CodexのCLIは導入済みです。研究室向けLLM APIを初期状態から利用するための標準設定は準備中です。認証情報、接続先、利用可否は管理者からの案内に従ってください。
 :::
 
 ## Next steps

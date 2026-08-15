@@ -3,24 +3,23 @@ title: Coder Workspace
 description: 喜多村研究室が提供するCoder Workspaceの概要と利用できる機能を説明します。
 ---
 
-Coderは、Server上に開発用のWorkspaceを作成し、ブラウザやVS Code Desktopから利用できる開発環境管理Platformです。一般的な仕組みは[Coder公式ドキュメント](https://coder.com/docs)でも確認できます。
+喜多村研究室が提供するCoder Workspaceは、ログインした直後から使えるLinux開発環境です。手元のPCへUbuntu環境を直接構築する作業が不要になり、Workspaceを作成してすぐ研究コードの実行を始められます。一般的な仕組みは[Coder公式ドキュメント](https://coder.com/docs)でも確認できます。
 
-本ページでは、喜多村研究室が提供するCoder Workspaceの概要と利用可能な機能を紹介しています。初めて利用する場合は、[利用対象と申請](../../getting-started/application/)から進めてください。
+初めて利用する場合は、[利用対象と申請](../../getting-started/application/)から進めてください。
 
 ## Workspaceとは
 
 Workspaceは利用者専用のLinux開発環境です。Containerとして起動し、他の利用者のWorkspaceとはファイル、Process、Editorの接続先が分離されます。
 
+仕組みを一文でまとめると、Workspaceは必要時に起動され、Stopすると処理は止まりますが、保存されたファイルはWorkspaceごとに保持される、というものです。
+
 ## 利用できる機能
 
-- ブラウザ上のTerminal
-- VS Code Web
-- VS Code DesktopからのRemote接続
-- RTX A2000 12GB GPU
-- Workspaceごとの永続Storage
-- Gitと一般的な開発Tool
-
-利用者が手元のPCへUbuntu環境を直接構築する必要はありません。Workspaceを作成すると、研究用のLinux環境が自動的に用意されます。
+- ブラウザ上の[Terminal](../getting-started/create-workspace/)と[VS Code Web](vscode-web/)
+- [VS Code Desktop](vscode-desktop/)からのRemote接続
+- 共有[GPU（RTX A2000 12GB）](../guides/gpu/)の利用
+- Workspaceごとの[永続Storage](persistence/)
+- [Git](../guides/git-github/)と一般的な[開発Tool](../guides/development-tools/)
 
 ## 基本的な利用の流れ
 

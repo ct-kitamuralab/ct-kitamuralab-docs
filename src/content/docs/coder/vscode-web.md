@@ -17,27 +17,22 @@ VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。
 
 初めて開いたWorkspaceには、個人の拡張機能や設定がまだ存在しない場合があります。研究内容に必要な拡張機能をWorkspaceごとに導入してください。
 
+例えば、Pythonで研究する場合は、左のExtensionsビュー（拡張機能アイコン）からPython拡張機能をインストールすると、シンタックスハイライトやLinterが有効になります。導入した拡張機能はWorkspaceごとなので、WorkspaceをDeleteすると再導入が必要です。
+
 ## 作業場所
 
-ProjectやNotebookなど、保持したいファイルは次のDirectory以下へ保存します。
-
-```text
-/home/coder
-```
-
-例:
-
-```text
-/home/coder/projects/my-research
-/home/coder/data
-/home/coder/notebooks
-```
-
-保存ルールの詳細は[ファイルと永続化](persistence/)を参照してください。
+保持したいファイルは `/home/coder` 以下へ保存してください。保存ルールとDisk使用量の確認方法は[ファイルと永続化](persistence/)で説明しています。
 
 ## 開かない場合
 
-ブラウザの再読み込み、別のブラウザ、Private Windowを試します。それでも開かない場合はWorkspaceのTerminalが利用できるか確認し、結果を管理者へ伝えてください。
+次の順番で確認してください。
+
+1. WorkspaceがCoderでRunningになっているか確認する
+2. ページを再読み込みする
+3. 別のブラウザまたはPrivate Windowで開く
+4. 同じWorkspaceのTerminalを開けるか確認する
+
+Terminalも開けない場合は、Workspace自体の接続に問題があると考えられます。[トラブルシューティング](../operations/troubleshooting/)に従って、Workspace名と表示状態を管理者へ伝えてください。
 
 ## Next steps
 

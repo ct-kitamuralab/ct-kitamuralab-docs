@@ -13,12 +13,22 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
+有効化に成功すると、プロンプトの先頭に `.venv` が表示されます。
+
+```text
+(.venv) coder@my-workspace:~/projects/my-research$
+```
+
 有効化後、Projectに必要なPackageを導入します。
 
 ```bash
 python -m pip install --upgrade pip
 python -m pip install <package-name>
 ```
+
+:::note
+Virtual Environmentの終了は `deactivate` コマンドで実行します。Terminalを閉じても次の起動時に再度 `source .venv/bin/activate` が必要です。
+:::
 
 ## 依存関係を記録する
 
@@ -32,6 +42,16 @@ Projectに応じて、次のいずれかをRepositoryへ保存してください
 :::tip
 Virtual Environment自体をGitへCommitするのではなく、依存関係を定義するファイルから再作成できる状態にします。
 :::
+
+## GPUを使う場合
+
+GPUで計算する場合は、CUDA対応のPackageが必要です。導入後は次のコマンドでCUDAが利用可能か確認します。
+
+```bash
+python -c "import torch; print(torch.cuda.is_available())"
+```
+
+`True` が表示されればGPUを利用できます。GPUの利用方法と確認コマンドの詳細は[GPUを利用する](gpu/)を参照してください。
 
 ## 保存場所
 
