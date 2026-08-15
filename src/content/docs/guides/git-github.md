@@ -25,7 +25,9 @@ git config --global user.email "you@example.com"
 研究コードをGitHubへ保存する基本の流れは次の通りです。
 
 ```bash
+# まずGithub上にあるコードを手元のディレクトリにコピー(clone)する。(新規作成する場合はスキップ)
 git clone https://github.com/OWNER/REPOSITORY.git
+# cloneしたリポジトリに移動する
 cd REPOSITORY
 ```
 

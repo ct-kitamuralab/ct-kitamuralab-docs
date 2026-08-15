@@ -11,7 +11,7 @@ Coder Workspaceには、Terminalから利用するAI Coding Agentが導入され
 | --- | --- | --- | --- |
 | [OpenCode](https://opencode.ai/) | `opencode` | Terminalで操作するコーディングAgent。複数のLLMに対応 | [OpenCode Docs](https://opencode.ai/docs) |
 | [Claude Code](https://www.anthropic.com/claude-code) | `claude` | 大規模なコードベースの編集・リファクタリングに向くAgent | [Claude Code Docs](https://docs.anthropic.com/en/docs/claude-code/overview) |
-| [Codex](https://openai.com/codex/) | `codex` | OpenAIのモデルを使うコーディングAgent | [Codex Docs](https://developers.openai.com/codex/) |
+| [Codex](https://openai.com/codex/) | `codex` | OpenAIのモデルを使うコーディングAgent | [Codex Docs](https://developers.openai.com/codex/) / [Codexのログイン](codex-login/) |
 
 導入済みかどうかは、次のCommandで確認できます。
 
@@ -22,6 +22,20 @@ codex --version
 ```
 
 各Commandでバージョン情報が表示されれば、そのAgentを利用できます。
+
+## 利用料金とプラン
+
+Codex、Claude Code、OpenCodeの料金はそれぞれ独立しています。
+
+| Agent | 無料で使えるか | 有料利用 | 備考 |
+| --- | --- | --- | --- |
+| [Codex](https://learn.chatgpt.com/docs/codex/cli) | 無料のChatGPTアカウントで利用可能（無料枠は制限キツめ [Codex使用上限](https://chatgpt.com/codex/cloud/settings/analytics#usage)を確認） | ChatGPT Plus / Pro / Business / Enterprise | 1つのChatGPTアカウントで認証 |
+| [Claude Code](https://code.claude.com/docs/ja/overview) | 不可 | Claude Pro / Max のサブスクリプション、またはAnthropic API key | Anthropicのモデルのみ対応 |
+| [OpenCode](https://opencode.ai/ja) | ログイン不要で**一応**無料枠あり | 利用するLLMの課金に準じる | 標準で複数のLLMプロバイダに対応 |
+
+:::caution
+ChatGPTのサブスクリプション認証をOpenCodeなどの他のAgentツールで利用できる場合がありますが、公式サポートの対象外となり得ます。利用は自己責任で判断してください。(Anthropic, Googleでは明確に規約違反としています。)
+:::
 
 ## 基本的な使い方
 

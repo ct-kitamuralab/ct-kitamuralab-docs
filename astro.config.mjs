@@ -64,7 +64,13 @@ export default defineConfig({
             { label: "GitとGitHub", slug: "guides/git-github" },
             { label: "Python環境", slug: "guides/python" },
             { label: "開発ツール", slug: "guides/development-tools" },
-            { label: "AI Coding Agent", slug: "guides/ai-coding-agents" },
+            {
+              label: "AI Coding Agent",
+              items: [
+                { label: "概要", slug: "guides/ai-coding-agents" },
+                { label: "Codexのログイン", slug: "guides/ai-coding-agents/codex-login" },
+              ],
+            },
           ],
         },
         {

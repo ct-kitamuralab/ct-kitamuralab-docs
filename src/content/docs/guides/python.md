@@ -8,8 +8,11 @@ PythonのLibraryはProjectごとのVirtual Environmentへ導入します。OS全
 ## Virtual Environmentを作成する
 
 ```bash
+# プロジェクトのディレクトリに移動 cd = Change Directoryの略 のハズ
 cd /home/coder/projects/my-research
+# Pythonの仮想環境(venv = Virtual ENVironment)を作成
 python3 -m venv .venv
+# 作成した仮想環境の有効化(activate)
 source .venv/bin/activate
 ```
 
@@ -23,7 +26,7 @@ source .venv/bin/activate
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install <package-name>
+pip install <package-name>
 ```
 
 :::note
@@ -34,6 +37,9 @@ Virtual Environmentの終了は `deactivate` コマンドで実行します。Te
 
 Projectに応じて、次のいずれかをRepositoryへ保存してください。
 
+# TODO requirements.txtの自動作成の追加
+# TODO uvでの例も追加
+
 - `requirements.txt`
 - `pyproject.toml`
 - `environment.yml`
@@ -41,6 +47,10 @@ Projectに応じて、次のいずれかをRepositoryへ保存してください
 
 :::tip
 Virtual Environment自体をGitへCommitするのではなく、依存関係を定義するファイルから再作成できる状態にします。
+
+(例: `pip install -r requirements.txt` requirements.txtで定義したPackageの一括インストール)
+
+参考: .gitignore
 :::
 
 ## GPUを使う場合

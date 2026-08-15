@@ -33,8 +33,6 @@ pwd
 次のように `/home/coder` またはその配下のパスが表示されれば、作業を始められます。
 
 ```text
-# 出力例
-
 /home/coder
 ```
 
@@ -48,8 +46,6 @@ pwd
 移動できると、`pwd` は次のように表示します。
 
 ```text
-# 出力例
-
 /home/coder
 ```
 
@@ -59,42 +55,33 @@ pwd
 
 ## ファイルとディレクトリ
 
-### 作業用ディレクトリを作成する
-
-`mkdir -p` で、Projectを置くための `projects` ディレクトリを作成します。`-p` を付けると、すでに同名のディレクトリがある場合もエラーになりません。
-
-```bash
-mkdir -p /home/coder/projects
-ls
-```
-
-一覧に `projects` が含まれていれば成功です。
-
-```text
-# 出力例
-
-projects
-```
-
 ### 一覧を確認する
 
 `ls` は作業中のディレクトリにあるファイルとディレクトリを表示します。`-la` を付けると、隠しファイルを含む詳しい一覧を確認できます。
 
 ```bash
+ls
+```
+
+表示される内容は環境によって異なります。次の例では、`projects` というディレクトリが表示されています。
+
+```text
+projects
+```
+
+```bash
 ls -la
 ```
 
-`.` と `..` を含む詳しい一覧が表示されます。
+`.` と `..` を含む詳しい一覧が表示されます。`projects` がまだない場合も、次の手順で作成できます。
 
 ```text
-# 出力例
-
-drwxr-xr-x  3 coder coder 4096 Jan  1 12:00 .
-drwxr-xr-x  3 root  root  4096 Jan  1 12:00 ..
+drwxr-xr-x  2 coder coder 4096 Jan  1 12:00 .
+drwxr-xr-x  3 coder coder 4096 Jan  1 12:00 ..
 drwxr-xr-x  2 coder coder 4096 Jan  1 12:00 projects
 ```
 
-### Projectを作成する
+### 移動と作成
 
 `cd` でディレクトリを移動し、`mkdir -p` でディレクトリを作成します。次の例では、Project用の場所と空のファイルを作成します。
 
@@ -108,8 +95,6 @@ ls
 `README.md` が表示されれば成功です。
 
 ```text
-# 出力例
-
 README.md
 ```
 
@@ -134,8 +119,6 @@ ls
 `README.md` と `NOTES.md` が表示されれば成功です。
 
 ```text
-# 出力例
-
 NOTES.md  README.md
 ```
 
@@ -153,8 +136,6 @@ ls
 `NOTES.md` が一覧から消え、`README.md` だけが表示されれば成功です。
 
 ```text
-# 出力例
-
 README.md
 ```
 
@@ -172,7 +153,7 @@ README.md
 | --- | --- |
 | `Tab` | ファイル名やコマンドを補完する |
 | `Ctrl + C` | 実行中のコマンドを中断する |
-| `clear` or `Ctrl + L` | 画面の表示を消去する |
+| `clear` | 画面の表示を消去する |
 | `history` | 実行したコマンドの履歴を表示する |
 
 `Tab` を使うと、長いパスの入力ミスを減らせます。補完候補が複数ある場合は、`Tab` をもう一度押して候補を表示してください。
