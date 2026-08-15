@@ -44,9 +44,13 @@ WorkspaceはTerminalから接続する環境のため、Sign in with ChatGPTを�
 
    ![Device Codeの画面](../../../../assets/screenshots/terminal-codex-sign-in-device-code.png)
 
-4. 自分の端末のブラウザで`https://auth.openai.com/codex/device`を開き、ChatGPTにサインインします。
-5. 表示されたページに、Terminalのコードを入力してサインインを完了します。
-6. WorkspaceのTerminalに戻ると、認証の完了が表示されます。
+4. 自分の端末で[ChatGPTのセキュリティとログイン設定](https://chatgpt.com/#settings/Security)を開き、「ChatGPT を使用した安全なサインイン」の「Codex に対してデバイスコード認証を有効にする」をオンにします。
+
+   ![ChatGPTでCodexのデバイスコード認証を有効にする設定](../../../../assets/screenshots/chatgpt-security-settings.png)
+
+5. 自分の端末のブラウザで`https://auth.openai.com/codex/device`を開き、ChatGPTにサインインします。
+6. 表示されたページに、Terminalのコードを入力してサインインを完了します。
+7. WorkspaceのTerminalに戻ると、認証の完了が表示されます。
 
 :::caution
 Device Codeは15分で失効します。また、Device Codeは一度きりの認証用です。Webサイトや他人から受け取ったコードは入力せず、自分がWorkspace側で始めたLoginにのみ使用してください。
@@ -62,11 +66,9 @@ Device Codeは15分で失効します。また、Device Codeは一度きりの�
    codex logout
    ```
 
-2. 必要な場合は、ChatGPT側からセッションも解除します。
-   - Codex CLIの接続だけ解除する: ChatGPTのSettings（右上のプロフィールアイコンから）→ セキュリティとログイン → 「ChatGPT を使用した安全なサインイン」→ Codex CLIの**接続を解除**
-   - 全デバイスのセッションをすべて終了する: Settings → Security → **Log out all**（他デバイスのセッションには最大30分ほどかかる場合があります。[公式Help](https://help.openai.com/en/articles/9243857-how-do-i-log-out-of-all-of-my-devices)）
-
-![ChatGPTのセキュリティとログイン設定](../../../../assets/screenshots/chatgpt-security-settings.png)
+2. 必要に応じて、[ChatGPTのセキュリティとログイン設定](https://chatgpt.com/#settings/Security)から、次のいずれかを行います。
+   - Codex CLIの接続だけ解除する: 「ChatGPT を使用した安全なサインイン」で、Codex CLIの**接続を解除**を選びます。
+   - 全デバイスのセッションをすべて終了する: **Log out all**を選びます。他デバイスのセッションには最大30分ほどかかる場合があります。[公式Help](https://help.openai.com/en/articles/9243857-how-do-i-log-out-of-all-of-my-devices)も参照してください。
 
 ## 今後の予定
 
