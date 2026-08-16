@@ -37,7 +37,7 @@ df -h /home/coder
 
 WorkspaceのStorageだけを唯一の保存先にしないでください。
 
-- 研究コードはGitHubなどのRemote Repositoryへpushする
+- 研究コードはGitHubなどのRemote Repositoryへpushする 詳しくは [GitとGitHub](../../guides/git-github) を確認してください
 - Gitで管理しないDataは、ローカルのPCなど別の保存先へ定期的に退避する
 - WorkspaceをDeleteする前に、必要なファイルを必ず確認する
 

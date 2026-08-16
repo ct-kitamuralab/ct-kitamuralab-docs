@@ -11,7 +11,7 @@ Coderへログインしたら、自分専用の開発環境となるWorkspaceを
 
 ![New workspaceダイアログでTemplateを選択](../../../assets/screenshots/coder-new-workspace.png)
 
-2. 管理者から案内されたTemplateを選択します。
+2. 任意のTemplateを選択します。
 
 3. Workspace名を入力します。ランダムに生成された名前でも構いません。
 
