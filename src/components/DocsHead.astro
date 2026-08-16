@@ -3,7 +3,9 @@ import DefaultHead from "@astrojs/starlight/components/Head.astro";
 
 const path = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
-const markdownPath = path === base ? `${base}index.md` : `${path.replace(/\/$/, "")}.md`;
+const basePath = base.endsWith("/") ? base : `${base}/`;
+const isHome = path.replace(/\/$/, "") === base.replace(/\/$/, "");
+const markdownPath = isHome ? `${basePath}index.md` : `${path.replace(/\/$/, "")}.md`;
 const llmsPath = `${base.replace(/\/$/, "")}/llms.txt`;
 ---
 
