@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "BASE_PATH=${BASE_PATH:-/ct-kitamuralab-docs} astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "astro": "^7.2.1"
+    "astro": "^7.2.1",
+    "vitest": "4.1.10"
   },
   "dependencies": {
     "@astrojs/starlight": "0.41.7"

@@ -18,7 +18,8 @@ npm run build      # BASE_PATH はデフォルト /ct-kitamuralab-docs（CI は�
 npm run preview    # dist/ の確認
 ```
 
-- テスト・lint・typecheck スクリプトは**存在しない**。検証は `npm run build` が成功すること + 生成物（`dist/`）での目視確認 + 非公開情報への grep。
+- テストがある（Vitest）。`npm test` を実行する。`test/` 配下: `llm-markdown` のユニットテスト、コンテンツと Sidebar/sections の整合性、相対リンク解決、llms.txt 出力、非公開情報の漏えいチェック（陽性対照付き）。
+- 検証は `npm run build` が成功すること + `npm test` + 生成物（`dist/`）での目視確認。
 - 本番と同じベースパスで確認する場合は `BASE_PATH=/ct-kitamuralab-docs npm run build`。
 
 ## 構造とルール
