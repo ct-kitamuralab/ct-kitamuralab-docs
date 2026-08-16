@@ -20,12 +20,12 @@ description: 手元のVS Code DesktopからCoder Workspaceへ接続する方法�
 
 ## 切り分け方法
 
-VS Code Desktopから接続できない場合は、先に[VS Code Web](vscode-web/)を開きます。
+VS Code Desktopから接続できない場合は、先に[VS Code Web](../vscode-web/)を開きます。
 
 - VS Code Webも開かない: Workspaceまたは接続環境の問題が考えられます。
 - VS Code Webは開く: 手元のVS Code、拡張機能、認証状態を確認します。
 
 ## Next steps
 
-- [VS Code Web](vscode-web/) — Coder Workspaceをブラウザ上のVS Code Webで開く方法を説明します。
-- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
+- [VS Code Web](../vscode-web/) — Coder Workspaceをブラウザ上のVS Code Webで開く方法を説明します。
+- [Workspaceの操作](../lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。

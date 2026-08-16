@@ -17,7 +17,7 @@ Workspace内では、保存先によってデータが保持されるかどう�
 `/home/coder` 以外に保存したデータは、Workspaceの再構築やStopに伴って失われる可能性があります。
 :::
 
-各操作（Start、Stop、Restart、Delete）で `/home/coder` がどのように扱われるかは、[Workspaceの操作](lifecycle/)で説明しています。
+各操作（Start、Stop、Restart、Delete）で `/home/coder` がどのように扱われるかは、[Workspaceの操作](../lifecycle/)で説明しています。
 
 :::caution
 Deleteに加え、管理者による保存Volumeの削除でも保存データは失われます。WorkspaceをDeleteする前にBackupを完了してください。
@@ -47,5 +47,5 @@ Deleteの前にBackupを完了してください。削除後の復元を前提�
 
 ## Next steps
 
-- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
+- [Workspaceの操作](../lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
 - [GitとGitHub](../../guides/git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。

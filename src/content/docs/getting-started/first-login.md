@@ -6,7 +6,7 @@ description: 管理者から案内された接続先を使ってCoderへ初め�
 
 ## ログイン手順
 
-1. Tailscaleアプリを起動し、接続済みであることを確認します。設定方法は[利用前の準備](prerequisites/)を参照してください。
+1. Tailscaleアプリを起動し、接続済みであることを確認します。設定方法は[利用前の準備](../prerequisites/)を参照してください。
 2. 管理者から受け取ったCoderの接続先をブラウザで開きます。接続先が応答しない場合は、Tailscaleが接続済みでない可能性が高いです。
 3. 表示されたGitHubの認証画面で、申請時に登録したGitHubアカウントでログインを許可します。申請時と別のアカウントでログインすると、認証は失敗します。
 4. CoderのDashboardが表示されれば、ログインは成功です。
@@ -28,4 +28,4 @@ description: 管理者から案内された接続先を使ってCoderへ初め�
 
 ## Next steps
 
-- [Workspaceを作成する](create-workspace/) — Coderへログインし、研究用のWorkspaceを作成する手順です。
+- [Workspaceを作成する](../create-workspace/) — Coderへログインし、研究用のWorkspaceを作成する手順です。

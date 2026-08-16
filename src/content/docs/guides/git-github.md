@@ -83,5 +83,5 @@ API Key、Token、Password、個人情報、未公開DataをGit RepositoryへCom
 
 ## Next steps
 
-- [開発ツール](development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
+- [開発ツール](../development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
 - [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。

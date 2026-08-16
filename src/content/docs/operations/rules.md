@@ -45,5 +45,5 @@ Workspaceは利用者ごとに分離されていますが、物理的には研�
 
 ## Next steps
 
-- [トラブルシューティング](troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
+- [トラブルシューティング](../troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
 - [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。

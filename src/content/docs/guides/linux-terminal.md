@@ -166,6 +166,6 @@ Project、設定、Virtual Environmentは、永続化される `/home/coder` 以
 
 ## Next steps
 
-- [GitとGitHub](git-github/) — 研究コードの変更履歴を記録し、Remote Repositoryへ保存する基本手順です。
-- [Python環境](python/) — ProjectごとにPython Virtual Environmentを作成し、依存関係を再現可能にする方法です。
+- [GitとGitHub](../git-github/) — 研究コードの変更履歴を記録し、Remote Repositoryへ保存する基本手順です。
+- [Python環境](../python/) — ProjectごとにPython Virtual Environmentを作成し、依存関係を再現可能にする方法です。
 - [ファイルと永続化](../../coder/persistence/) — Workspaceの再構築後も残すべきファイルの保存先を確認できます。

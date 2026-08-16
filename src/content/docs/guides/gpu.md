@@ -54,7 +54,7 @@ x = torch.randn(1024, 1024, device=device)
 print(x @ x)
 ```
 
-Packageの導入方法は[Python環境](python/)を参照してください。
+Packageの導入方法は[Python環境](../python/)を参照してください。
 
 ## 利用上の注意
 

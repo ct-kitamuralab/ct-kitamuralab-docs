@@ -83,7 +83,7 @@ GPUで計算する場合は、CUDA対応のPackageが必要です。導入後は
 python -c "import torch; print(torch.cuda.is_available())"
 ```
 
-`True` が表示されればGPUを利用できます。GPUの利用方法と確認コマンドの詳細は[GPUを利用する](gpu/)を参照してください。
+`True` が表示されればGPUを利用できます。GPUの利用方法と確認コマンドの詳細は[GPUを利用する](../gpu/)を参照してください。
 
 ## 保存場所
 
@@ -91,5 +91,5 @@ Virtual EnvironmentとProjectは、永続化される `/home/coder` 以下へ作
 
 ## Next steps
 
-- [開発ツール](development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
-- [GitとGitHub](git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。
+- [開発ツール](../development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
+- [GitとGitHub](../git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。

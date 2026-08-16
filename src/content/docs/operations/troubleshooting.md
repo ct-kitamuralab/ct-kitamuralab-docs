@@ -74,5 +74,5 @@ Password、API Key、Token、秘密鍵などのCredentialは送らないでく�
 
 ## Next steps
 
-- [利用ルール](rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
+- [利用ルール](../rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
 - [GPUを利用する](../../guides/gpu/) — Coder WorkspaceからRTX A2000 12GBを確認し、共有GPUを利用する方法です。

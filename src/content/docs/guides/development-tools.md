@@ -17,7 +17,7 @@ Coder Workspaceには、研究コードの開発・管理に必要な基本ツ�
 | [VS Code](https://code.visualstudio.com/) | コードを編集する | [VS Code Docs](https://code.visualstudio.com/docs) |
 | AI Coding Agent | AIを使ったコード作成・レビュー支援 | [AI Coding Agent](../ai-coding-agents/) |
 
-PythonのProject環境は、[Python環境](python/)を参照してください。
+PythonのProject環境は、[Python環境](../python/)を参照してください。
 
 Workspace作成時にzsh-dotfilesを有効にすると、zshと研究室向けの設定を利用できます。
 
@@ -49,10 +49,10 @@ npm init -y
 
 ## GitHub CLIを使う
 
-`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。初回認証（`gh auth login`）の手順は[GitとGitHub](git-github/)で説明しています。
+`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。初回認証（`gh auth login`）の手順は[GitとGitHub](../git-github/)で説明しています。
 
 :::caution
-公開Repositoryへ研究データや秘密情報をpushしないよう、[GitとGitHub](git-github/)の注意事項も確認してください。
+公開Repositoryへ研究データや秘密情報をpushしないよう、[GitとGitHub](../git-github/)の注意事項も確認してください。
 :::
 
 ## 保存場所
@@ -61,5 +61,5 @@ Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存し�
 
 ## Next steps
 
-- [Python環境](python/) — Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
-- [AI Coding Agent](ai-coding-agents/) — Workspaceに導入されているAI Coding Agentの用途、安全な利用方法、公式ドキュメントを案内します。
+- [Python環境](../python/) — Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
+- [AI Coding Agent](../ai-coding-agents/) — Workspaceに導入されているAI Coding Agentの用途、安全な利用方法、公式ドキュメントを案内します。

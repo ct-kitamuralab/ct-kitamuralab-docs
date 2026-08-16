@@ -21,7 +21,7 @@ VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。
 
 ## 作業場所
 
-保持したいファイルは `/home/coder` 以下へ保存してください。保存ルールとDisk使用量の確認方法は[ファイルと永続化](persistence/)で説明しています。
+保持したいファイルは `/home/coder` 以下へ保存してください。保存ルールとDisk使用量の確認方法は[ファイルと永続化](../persistence/)で説明しています。
 
 ## 開かない場合
 
@@ -36,5 +36,5 @@ Terminalも開けない場合は、Workspace自体の接続に問題があると
 
 ## Next steps
 
-- [VS Code Desktop](vscode-desktop/) — 手元のVS Code DesktopからCoder Workspaceへ接続する方法を説明します。
-- [Workspaceの操作](lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
+- [VS Code Desktop](../vscode-desktop/) — 手元のVS Code DesktopからCoder Workspaceへ接続する方法を説明します。
+- [Workspaceの操作](../lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。

@@ -49,5 +49,5 @@ DeleteによってWorkspaceの保存データが削除される可能性があ�
 
 ## Next steps
 
-- [ファイルと永続化](persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。
+- [ファイルと永続化](../persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。
 - [トラブルシューティング](../../operations/troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
