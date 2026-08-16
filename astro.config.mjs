@@ -27,6 +27,9 @@ export default defineConfig({
       },
       customCss: ["./src/styles/docs.css"],
       components: {
+        PageFrame: "./src/components/DocsPageFrame.astro",
+        TwoColumnContent: "./src/components/DocsTwoColumnContent.astro",
+        ContentPanel: "./src/components/DocsContentPanel.astro",
         Head: "./src/components/DocsHead.astro",
         Header: "./src/components/DocsHeader.astro",
         Hero: "./src/components/DocsHero.astro",

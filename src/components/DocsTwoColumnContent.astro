@@ -1,0 +1,52 @@
+<div class="docs-columns">
+  <aside class="right-sidebar-container print:hidden">
+    <div class="right-sidebar">
+      <slot name="right-sidebar" />
+    </div>
+  </aside>
+  <div class="main-pane"><slot /></div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .right-sidebar-container,
+    .right-sidebar {
+      display: contents;
+    }
+
+    .main-pane {
+      min-width: 0;
+      isolation: isolate;
+    }
+
+    @media (min-width: 80rem) {
+      .docs-columns {
+        display: flex;
+        min-width: 0;
+      }
+
+      .right-sidebar-container {
+        display: block;
+        width: var(--docs-toc-width);
+        flex: none;
+        order: 2;
+      }
+
+      .right-sidebar {
+        position: sticky;
+        top: var(--sl-nav-height);
+        display: block;
+        height: calc(100vh - var(--sl-nav-height));
+        border-inline-start: 1px solid var(--sl-color-hairline-shade);
+        overflow-y: auto;
+        scrollbar-width: none;
+      }
+
+      .main-pane {
+        min-width: 0;
+        flex: 1;
+        order: 1;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,24 @@
+<div class="content-panel">
+  <div class="sl-container"><slot /></div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .content-panel {
+      padding: 1.5rem var(--sl-content-pad-x);
+    }
+
+    .content-panel + .content-panel {
+      border-top: 1px solid var(--sl-color-hairline);
+    }
+
+    .sl-container {
+      max-width: var(--sl-content-width);
+      margin-inline: auto;
+    }
+
+    .sl-container > :global(* + *) {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

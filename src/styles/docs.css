@@ -14,8 +14,9 @@
   --sl-color-black: #ffffff;
   --sl-color-bg-nav: rgb(255 255 255 / 96%);
   --sl-color-bg-sidebar: #fbfcfc;
-  --sl-content-width: 50rem;
-  --sl-sidebar-width: 17.5rem;
+  --sl-content-width: 43.5rem;
+  --sl-sidebar-width: 18.75rem;
+  --docs-toc-width: 18rem;
   --sl-nav-height: 4rem;
   --sl-text-h1: clamp(2rem, 4vw, 2.75rem);
 }
@@ -43,7 +44,7 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
 .right-sidebar { border-inline-start: 1px solid var(--sl-color-gray-5); }
 .docs-desktop-toc-container { display: none; }
 .right-sidebar-panel { padding: 1.5rem var(--sl-sidebar-pad-x) !important; }
-.docs-page-sidebar { display: grid; gap: 2rem; width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x)); }
+.docs-page-sidebar { display: grid; gap: 2rem; }
 .docs-page-sidebar :is(h2, a) { overflow-wrap: anywhere; }
 .docs-toc h2 { margin-bottom: 0.5rem !important; color: var(--sl-color-white) !important; font-size: 0.875rem !important; font-weight: 650 !important; letter-spacing: 0; text-transform: none; }
 .docs-toc nav { position: relative; }
@@ -136,19 +137,6 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
   .status-row { grid-template-columns: 1fr auto; }
   .status-row p { grid-column: 1 / -1; }
   .quick-facts { grid-template-columns: 1fr; }
-}
-
-@media (min-width: 50rem) and (max-width: 63.999rem) {
-  .docs-mobile-toc { inset-inline-start: var(--sl-content-inline-start, 0); }
-}
-
-/* Match Cloudflare Docs: reserve the left rail from 1024px and the TOC from 1280px. */
-@media (min-width: 50rem) and (max-width: 63.999rem) {
-  html[data-has-sidebar] { --sl-content-inline-start: 0; }
-  [data-has-sidebar] .header { padding-inline-end: calc(var(--sl-nav-gap) + var(--sl-nav-pad-x) + var(--sl-menu-button-size)); }
-  starlight-menu-button > button { display: flex !important; }
-  .sidebar-pane { --sl-sidebar-visibility: hidden; width: 100%; background-color: var(--sl-color-black); border-inline-end: 0; }
-  starlight-menu-button[aria-expanded="true"] ~ .sidebar-pane { --sl-sidebar-visibility: visible; }
 }
 
 @media (min-width: 80rem) {
