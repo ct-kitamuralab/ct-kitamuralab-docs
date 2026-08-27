@@ -67,6 +67,8 @@ function markdownBody(entry: DocEntry) {
     .replace(/<\/CardGrid>/g, "")
     .replace(/<Card title="([^"]+)"[^>]*>/g, "### $1\n")
     .replace(/<\/Card>/g, "")
+    .replace(/<details>\s*<summary>([^<]+)<\/summary>/g, "### $1\n")
+    .replace(/<\/details>/g, "")
     .replace(/<br\s*\/>/g, "\n")
     .replace(/<\/?small>/g, "")
     .replace(/<\/?div[^>]*>/g, "")

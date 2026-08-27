@@ -49,10 +49,10 @@ npm init -y
 
 ## GitHub CLIを使う
 
-`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。初回認証（`gh auth login`）の手順は[GitとGitHub](../git-github/)で説明しています。
+`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。Gitで作成したCommitをGitHubへ保存する基本操作は、[GitHubへ保存する](../github/)で説明しています。
 
 :::caution
-公開Repositoryへ研究データや秘密情報をpushしないよう、[GitとGitHub](../git-github/)の注意事項も確認してください。
+公開Repositoryへ研究データや秘密情報をpushしないよう、[GitHubへ保存する](../github/)の注意事項も確認してください。
 :::
 
 ## 保存場所

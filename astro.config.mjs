@@ -69,9 +69,11 @@ export default defineConfig({
         {
           label: "開発ガイド",
           items: [
-            { label: "Linuxターミナルの基本", slug: "guides/linux-terminal" },
+            { label: "Linux(Mac OS)ターミナルの基本", slug: "guides/linux-terminal" },
             { label: "GPUを利用する", slug: "guides/gpu" },
-            { label: "GitとGitHub", slug: "guides/git-github" },
+            { label: "Gitとは", slug: "guides/git-github" },
+            { label: "変更をCommitする", slug: "guides/git-commit" },
+            { label: "GitHubへ保存する", slug: "guides/github" },
             { label: "Python環境", slug: "guides/python" },
             { label: "開発ツール", slug: "guides/development-tools" },
             {

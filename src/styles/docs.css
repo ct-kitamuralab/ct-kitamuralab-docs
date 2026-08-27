@@ -86,6 +86,7 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
 .sl-markdown-content table { display: table; width: 100%; font-size: 0.86rem; }
 .sl-markdown-content th { background: var(--sl-color-gray-6); font-weight: 650; }
 .sl-markdown-content :not(pre) > code { border: 1px solid var(--sl-color-gray-5); border-radius: 0.15rem; }
+.sl-markdown-content img { display: block; margin-inline: auto; }
 .expressive-code { margin-block: 1.35rem; }
 
 .docs-footer { flex-direction: column; gap: 1.5rem; }

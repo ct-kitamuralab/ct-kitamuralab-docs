@@ -1,236 +1,185 @@
 ---
-title: GitとGitHub
-description: WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本操作です。英語UIの見方と最小ワークフローを画像で説明します。
+title: Gitとは
+description: ファイルの変更履歴を自分の作業フォルダに記録するGitの基本概念と、使い始める準備を説明します。
 ---
 
-Gitはファイルの変更履歴を記録するためのVersion Control Systemで、GitHubはGitで管理したコードを保存・共有するためのWebサービスです。このページを読み終えると、WorkspaceでGitを設定し、GitHub上に新しいRepositoryを作って、自分の研究コードをpushできるようになります。Gitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)（Gitの日本語解説書）、Repositoryの運用は[GitHub Docs](https://docs.github.com/ja)（GitHubの公式ドキュメント）で確認できます。
+Gitは、ファイルの変更履歴を記録するツールです。コードを編集する前に記録を残しておくと、変更内容を確認したり、必要に応じて以前の状態を調べたりできます。このページでは、Gitが何を記録するのかと、作業フォルダでGitを使い始める方法を説明します。
+
+## Gitでできること
+
+Gitは、作業フォルダ内のファイルがどのように変わったかを記録します。ゲームで言うところの**セーブ・ロード機能**の上位互換です。記録は自分のWorkspace内で完結します。この段階では、ファイルが外部へ送信されることはありません。(Githubを活用するとそれぞれ異なる環境でも変更履歴を引き継いだまま容易に共有ができます。バックアップとしてもいいです。[Githubへ保存する](../git-commit/))
+
+Gitを使うと、次のことができます。
+
+- どのファイルを変更したか確認する
+- 変更内容を見比べる
+- 意味のある単位で変更を履歴として残す
+- 過去に作った履歴を確認する
+
+### 何が嬉しいのか
+
+- ゲームのセーブ・ロードのように、コミット(セーブ)した状態をいつでも確認でき、revert(ロード)していつでもあとからコードを修正することが可能になる
+- VS Codeなどのエディタ画面に深く導入されているため、Gitを利用することにより、リアルタイムにどの部分を追加し、変更し、削除したのか一目で確認できる
+- Codex, Claude CodeなどAIエージェントツールがどういった変更を行ったのかを可視化できるため、変更内容を追いやすくなる
 
 ## まず知っておくこと
 
-このページで使う用語を次のように説明します。
+- **作業フォルダ**: コードやメモなどを置いて編集するフォルダです。
+- **Repository（リポジトリ）**: Gitが変更履歴を管理する作業フォルダです。
+- **diff(変更)**: 前回記録した状態から、ファイルを作成、編集、削除した差分です。
+- **Commit（コミット）**: 選んだ変更を1つの履歴として記録する操作です。
 
-- **Repository**：Gitが管理するフォルダ。Workspace内に作ったものを**ローカルRepository**、GitHub上にあるものを**Remote Repository**と呼びます
-- **Commit**：変更履歴に記録される1回の変更。`git commit` コマンドで記録します
-- **clone**：GitHub上のRepositoryをWorkspace内へコピーすること
-- **push**：Workspace内のCommitをGitHubへ送信すること
-
-ローカルとRemoteのやり取りは次のようになります。
+Gitでの基本的な流れは次のとおりです。具体的なCommitの手順は、次のページで説明します。
 
 ```mermaid
 flowchart LR
-  Workspace@{ icon: "mdi:desktop-classic", form: "rounded", label: "Workspace（ローカルRepository）" }
-  GitHub@{ icon: "mdi:github", form: "circle", label: "GitHub（Remote Repository）" }
-  Workspace -->|"git push でCommitを送信"| GitHub
-  GitHub -->|"git clone でコピー"| Workspace
+  Edit@{ icon: "mdi:file-edit-outline", form: "rounded", label: "ファイルを編集する" }
+  Diff@{ icon: "mdi:file-compare", form: "rounded", label: "変更内容を確認する" }
+  Stage@{ icon: "mdi:checkbox-marked-circle-outline", form: "rounded", label: "記録する変更を選ぶ" }
+  Commit@{ icon: "mdi:source-commit", form: "rounded", label: "Commitを作る" }
+  Edit --> Diff --> Stage --> Commit
 ```
 
-## 全体の流れ
+## Gitをインストールする
 
-1. Gitを設定する
-2. GitHubで新規Repositoryを作る
-3. Clone URLを取得する
-4. Repositoryをcloneして作業ディレクトリを作る
-5. コードを書いてcommit・pushする
+Gitを使うPCへGitをインストールします。Coder WorkspaceにはGitが導入済みですが、手元のPCでGitを使う場合は、使っているOSに対応する手順を実行してください。
 
-## 前提条件
+<details>
+<summary>macOS</summary>
 
-- GitHubのアカウントがあること。RepositoryはGitHubのアカウントに紐づけて作るためです。[github.com](https://github.com/)にログインできていれば、この前提は満たされています
+macOSでは、Git公式が案内するXcode Command Line Toolsを使う方法が最も簡単です。Terminalを開き、次のコマンドを実行します。
 
-## 1. Gitを設定する
+```bash
+git --version
+```
 
-GitはCommitに「誰が変更したか」（名前とメールアドレス）を記録します。まだ設定されていなければ、次のコマンドで確認します。
+Gitが未インストールの場合は、Xcode Command Line Toolsをインストールする画面が表示されます。**インストール**を選び、完了するまで待ちます。完了後、もう一度`git --version`を実行して確認してください。
+
+より新しいGitが必要な場合は、[Git公式のmacOS用インストーラ](https://git-scm.com/download/mac)を利用できます。
+
+</details>
+
+<details>
+<summary>Windows</summary>
+
+Windowsでは、[Git for Windows公式サイト](https://gitforwindows.org/)から公式インストーラをダウンロードします。ダウンロードしたインストーラを開き、画面の案内に従ってインストールしてください。
+
+インストール後、**Git Bash**を開いて、次のコマンドを実行します。
+
+```bash
+git --version
+```
+
+</details>
+
+<details>
+<summary>Ubuntu</summary>
+
+Ubuntuでは、標準のPackage Managerである`apt`を使います。Terminalを開き、次のコマンドを実行します。
+
+```bash
+sudo apt update
+sudo apt install git-all
+```
+
+- `sudo`: 管理者権限でコマンドを実行します。PCのパスワード入力を求められる場合があります。
+- `apt update`: インストール可能なPackageの情報を更新します。
+- `apt install git-all`: Gitをインストールします。
+
+インストールが完了したら、次のコマンドで確認してください。
+
+```bash
+git --version
+```
+
+Git公式は、Debian系LinuxであるUbuntuでは`apt`による導入を案内しています。ほかのLinuxディストリビューションを使う場合は、[Git公式のLinux用インストール手順](https://git-scm.com/download/linux)を確認してください。
+
+</details>
+
+## Gitが使えるか確認する
+
+Terminalを開き、次のコマンドを実行します。
+
+```bash
+git --version
+```
+
+- `git`: Gitを操作するコマンドです。
+- `--version`: Gitのバージョンを表示するオプションです。
+
+次のようにバージョン番号が表示されれば、Gitを利用できます。番号は例であり、一致する必要はありません。
+
+```text
+git version 2.43.0
+```
+
+`command not found` と表示される場合は、Gitを実行できる状態ではありません。Workspace名とエラー内容を管理者へ伝えてください。
+
+## 作業フォルダでGitを始める
+
+まだGitで管理していない作業フォルダでは、`git init` を一度だけ実行します。ここでは、既にあるプロジェクトフォルダを例にします。
+
+```bash
+cd /path/to/your-project
+git init
+```
+
+- `cd`: 作業するフォルダへ移動するコマンドです。
+- `/path/to/your-project`: 自分のプロジェクトフォルダの場所に置き換えます。
+- `git init`: 現在いるフォルダをGitのRepositoryとして初期化するコマンドです。
+
+実行すると、フォルダ内にGitの履歴を管理するための`.git`ディレクトリが作られます。普段はこのディレクトリを直接編集しません。
+
+### 確認
+
+```bash
+git status
+```
+
+- `status`: 現在のRepositoryでGitが把握している状態を表示するサブコマンドです。
+
+初期化直後は、次のようにまだCommitがないことが表示されます。
+
+```text
+On branch main
+
+No commits yet
+nothing to commit
+```
+
+## Commitに記録する名前を設定する
+
+GitはCommitを作るとき、作成者の名前とメールアドレスを履歴に記録します。現在の設定を確認します。
 
 ```bash
 git config --global --list
 ```
 
-- `git`: Gitを操作するコマンド
-- `config`: Gitの設定を読み書きするサブコマンド
-- `--global`: 自分のアカウント全体（Workspace内の全Repository）に適用することを示すオプション
-- `--list`: 設定の一覧を表示するオプション
-
-Workspaceでは、利用者の情報からGitのユーザー情報が自動設定されている場合があります。自動設定されている場合は、自分の名前とメールアドレスが次のように表示されます（例）。
+`user.name`と`user.email`が自分の情報として表示されれば、設定済みです。
 
 ```text
 user.name=Your Name
 user.email=you@example.com
 ```
 
-`user.name` や `user.email` が表示されず、自分の情報になっていない場合は、次のように設定します。`"Your Name"` と `"you@example.com"` は、それぞれ自分の名前とメールアドレスに置き換えてください。
+表示されない、または自分の情報ではない場合は、次のように設定します。例の名前とメールアドレスは自分のものに置き換えてください。(入力する値は正直なんでもいいです。誰がその行を変更したのか後でわかりやすくなります。)  
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-- `user.name`: Commitに記録される名前
-- `user.email`: Commitに記録されるメールアドレス。GitHub上のCommit表示にも使われます
-
-設定が完了したことを確認します。先ほどの一覧コマンドを再度実行し、自分の名前とメールアドレスが表示されればOKです。
-
-```bash
-git config --global --list
-```
+- `config`: Gitの設定を読み書きするサブコマンドです。
+- `--global`: このWorkspace内で自分が使う全Repositoryに設定を適用します。
+- `user.name`: Commitに記録する名前です。
+- `user.email`: Commitに記録するメールアドレスです。
 
 :::note
-設定していないまま `git commit` を実行すると、`Committer identity unknown` のエラーでCommitできません。エラーが出たら、この手順で名前とメールアドレスを設定してください。
-:::
-
-## 2. GitHubで新規Repositoryを作る
-
-GitHub上に、研究コードを保存する場所を作ります。GitHubのアカウントでログインし、右上の **+** メニューから **New repository** を選ぶと、作成フォームが開きます。
-
-- **Repository name**：リポジトリ名（`research-notes` のように英数字で付けます）
-- **Description**：説明（任意）
-- **Public / Private**：公開するか非公開にするかの切り替え。研究コードが外部に見えたら困る場合は **Private** にします
-- **Add a README**：チェックすると空のREADMEが最初にCommitされます
-
-:::caution
-**Public** にすると、誰でもコードを見られます。研究コードや未公開の研究Dataを含むRepositoryは **Private** にしてください。
-:::
-
-最後に **Create repository** ボタンで確定すると、次の「GitHubの画面」に移動します。
-
-## 3. GitHubの画面を見る
-
-Repositoryページは英語で表示されます。左のファイル一覧、上部のタブ、緑の **Code** ボタンが主な操作入口です。
-
-![GitHubのRepositoryトップ画面](../../../assets/screenshots/github-repo-main-view.png)
-
-- **Code**（緑のボタン）：このリポジトリのコードをダウンロード（clone）するための場所
-- **Branch**（`main` と表示）：作業するブランチの選択。通常は `main` のままです
-- **Go to file**：リポジトリ内のファイルを名前から検索する欄
-- **Issues / Pull requests / Actions**：問題・変更提案・自動処理のタブ。まずは `Code` に絞ります
-
-## 4. Clone URLを取得する
-
-緑の **Code** ボタンを押すと、ドロップダウンが開きます。ここに **Clone用のURL** が表示され、コピーボタンでコピーできます。
-
-![Codeボタンのドロップダウン（Clone URLが表示される）](../../../assets/screenshots/github-code-dropdown.png)
-
-- **HTTPS / GitHub CLI**：上段のタブ。`git clone` には **HTTPS** 側を使う
-- **コピーボタン**：URL欄の右にあるアイコンで、URLをコピーします
-- このURLを `git clone` の引数に用います
-
-## 5. Repositoryをcloneする
-
-ここまででRepositoryはGitHub上にのみ存在し、Workspace内にはまだ何もありません。Workspaceでコードを編集するためには、まずRepositoryをWorkspace内へ持ってくる必要があります。これがcloneの役割です。
-
-Terminalで、プロジェクトを置きたいディレクトリ（例: `/home/coder`）に移動してから、次のコマンドを実行します。
-
-```bash
-cd /home/coder
-git clone https://github.com/YOUR-USERNAME/research-notes.git
-cd research-notes
-```
-
-- `cd /home/coder`: プロジェクトを置きたいディレクトリへ移動するコマンド（`cd` = change directory）
-- `git clone`: GitHub上のRepositoryを現在のディレクトリへコピーするコマンド。引数に4.でコピーしたClone URLを指定します（`YOUR-USERNAME` はGitHubのユーザー名です）
-- `cd research-notes`: cloneで生成された `research-notes` フォルダへ移動するコマンド
-
-cloneの成功を確認します。
-
-```bash
-ls
-```
-
-2.で **Add a README** にチェックした場合は、次のように表示されます。
-
-```text
-README.md
-```
-
-`research-notes` フォルダが作業ディレクトリになります。ここから研究コードを書き、commit・pushしていきます。`/home/coder` 以下に置いているため、Workspaceの再構築後も残ります。
-
-## 6. コードを書いてcommit・pushする
-
-`research-notes` フォルダに研究コードを書きます（テキストエディタやVS Codeでファイルを作成・編集します）。コードを編集したあと、編集ごとに次のコマンドを実行します。
-
-```bash
-git status            # 変更されたファイルを確認
-git add .             # 変更をCommitへ追加
-git diff --staged     # Commitに含める内容を確認
-git commit -m "change description"
-git push              # Remote Repositoryへ保存
-```
-
-- `git status`: 何が変更されたかを確認します。変更されたファイルは `modified:`、新規のファイルは `Untracked files:` と表示されます
-- `git add .`: 変更をCommitに含める対象へ追加します。`.` は「現在のフォルダ配下の全変更」を示します
-- `git diff --staged`: `git add` した内容がCommitに含められることを確認します。大きなDataや秘密情報を誤って含めていないか、ここで確認するのが安全です
-- `git commit`: 変更を履歴に記録します。`-m` の後に変更内容の短い説明（Commit Message）を書きます
-- `git push`: Remote Repository（GitHub側）へ保存します。cloneしたRepositoryは既にGitHubと紐づいているため、`git push` のみで構いません
-
-`git push` が成功すると、Repositoryページのファイル一覧が更新され、GitHub側に最新の内容が表示されます。
-
-:::tip
-Commit Messageは「何を変えたか」が分かる短い英語で書くのが一般的です。例えば `add data loading script` のように書きます。
-:::
-
-cloneからpushまでの流れは、次のGIFも参考にしてください。
-
-![gitの最小ワークフロー（cloneからpushまで）](../../../assets/screenshots/git-workflow.gif)
-
-### コードのフォルダが既に手元にある場合
-
-cloneする前にコードのフォルダを既に持っている場合は、フォルダ内でGitを初期化して、2.で作ったRepositoryと紐づけます。
-
-```bash
-cd /path/to/your-code
-git init
-git remote add origin https://github.com/YOUR-USERNAME/research-notes.git
-```
-
-- `git init`: 現在のフォルダでGitの管理（ローカルRepository）を開始するコマンド
-- `git remote add origin`: 2.で作ったRepositoryを `origin` という名前で登録し、GitHub側と紐づけるコマンド。`origin` の後には4.でコピーしたClone URLを書きます
-
-その後、`git status` → `git add .` → `git commit -m "initial commit"` → `git push -u origin main` の順で実行すると、GitHubに保存されます。`-u` を付けると、そのあとのpushで `origin main` を省略できるようになります。
-
-各コマンドの役割とGitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)で確認できます。
-
-## GitHub CLIを使う
-
-WorkspaceではGitHub CLI（`gh`）も利用できます。TerminalからRepository、Issue、Pull Requestを操作するためのツールで、初回利用はGitHubへの認証が必要です。
-
-```bash
-gh auth login
-```
-
-- `gh`: GitHub CLIを操作するコマンド
-- `auth login`: GitHubへの認証（ログイン）を行うサブコマンド
-
-画面の案内に従い、GitHubのブラウザ認証を完了します。認証が成功すると、次のようにRepositoryをTerminalからcloneできます。
-
-```bash
-gh repo clone YOUR-USERNAME/research-notes
-```
-
-`gh repo clone` には `YOUR-USERNAME/Repository名` の形式を指定します。Clone URLをコピーしなくてもよいのが便利です。
-
-CLIによるGitHub操作は[GitHub CLI公式マニュアル](https://cli.github.com/manual/)（`gh` の全コマンドとオプションの解説）で確認できます。
-
-:::caution
-認証時に表示されるTokenや認証コードは他人に共有しないでください。
-:::
-
-## 推奨する運用
-
-- 作業単位ごとにCommitする
-- 研究コードを定期的にRemote Repositoryへpushする
-- 大きなDataや生成物を無条件にGitへ追加しない
-- `requirements.txt` や `pyproject.toml` など、環境を再現するファイルをCommitする
-- `.gitignore` を確認する
-
-大きなData（Dataset、モデルの生成物など）はGitへ追加せず、[ファイルと永続化](../../coder/persistence/)で説明する `/home/coder` 以下に保存し、必要に応じて別の保存先へ退避してください。
-
-## 秘密情報をCommitしない
-
-API Key、Token、Password、個人情報、未公開DataをGit RepositoryへCommitしないでください。
-
-:::danger
-秘密情報を一度pushすると、後からファイルを削除しても履歴に残ることがあります。Commit前に `git status` と差分を確認してください。
+名前とメールアドレスはCommit履歴に残ります。外部へ共有する可能性があるRepositoryでは、公開してよい情報を設定してください。  
+基本的にGithubに登録したユーザーネームとそのメールアドレス(匿名メールアドレスも可 参考: [【Git】メールアドレスを非公開にする](https://qiita.com/P-man_Brown/items/66291370639294d7ffc8))を設定します。
 :::
 
 ## Next steps
 
-- [開発ツール](../development-tools/) — Coder Workspaceに標準で導入される開発ツールと、用途別の公式ドキュメントを紹介します。
-- [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。
+- [変更をCommitする](../git-commit/) - VS Codeのソース管理タブを使い、変更を確認してCommitする流れを説明します。
+- [Linuxターミナルの基本](../linux-terminal/) - `cd`など、Terminalで作業フォルダを操作する基本コマンドを説明します。
