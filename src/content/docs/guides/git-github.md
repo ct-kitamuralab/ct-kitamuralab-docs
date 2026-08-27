@@ -1,11 +1,11 @@
 ---
 title: GitとGitHub
-description: WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。
+description: WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本操作です。英語UIの見方と最小ワークフローを画像で説明します。
 ---
 
-研究コードはGitで変更履歴を管理し、GitHubなどのRemote Repositoryへ定期的にpushすることを推奨します。Gitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)、Repository運用は[GitHub Docs](https://docs.github.com/ja)を参照してください。
+研究コードはGitで変更履歴を管理し、GitHubなどのRemote Repositoryへ定期的にpushすることを推奨します。このページでは、Gitの設定から、英語のGitHub画面の見方、Repositoryの作成、最小ワークフロー（clone→commit→push）までを説明します。Gitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)、Repository運用は[GitHub Docs](https://docs.github.com/ja)を参照してください。
 
-## 設定を確認する
+## Gitを設定する
 
 Workspaceでは、利用者の情報からGitのユーザー情報が自動設定されている場合があります。確認するには次を実行します。
 
@@ -20,18 +20,56 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
+設定が完了すれば `git status` にエラーが出なくなります。
+
+## 新規Repositoryを作る
+
+まずはGitHub上にRepositoryを作ります。GitHubのアカウントでログインし、右上の **+** メニューから **New repository** を選ぶと、作成フォームが開きます。
+
+- **Repository name**：リポジトリ名（`research-notes` のように英数字で付けます）
+- **Description**：説明（任意）
+- **Public / Private**：公開するか非公開にするかの切り替え。研究コードが外部に見えたら困る場合は **Private** にします
+- **Add a README**：チェックすると空のREADMEが最初にCommitされます
+
+最後に **Create repository** ボタンで確定すると、次の「GitHubの画面」に移動します。
+
+## GitHubの画面
+
+Repositoryページは英語で表示されます。左のファイル一覧、上部のタブ、緑の **Code** ボタンが主な操作入口です。
+
+![GitHubのRepositoryトップ画面](../../../assets/screenshots/github-repo-main-view.png)
+
+- **Code**（緑のボタン）：このリポジトリのコードをダウンロード（clone）するための場所
+- **Branch**（`main` と表示）：作業するブランチの選択。通常は `main` のままです
+- **Go to file**：リポジトリ内のファイルを名前から検索する欄
+- **Issues / Pull requests / Actions**：問題・変更提案・自動処理のタブ。まずは `Code` に絞ります
+
+## Clone URLを取得する
+
+緑の **Code** ボタンを押すと、ドロップダウンが開きます。ここに **Clone用のURL** が表示され、コピーボタンでコピーできます。
+
+![Codeボタンのドロップダウン（Clone URLが表示される）](../../../assets/screenshots/github-code-dropdown.png)
+
+- **HTTPS / GitHub CLI**：上段のタブ。`git clone` には **HTTPS** 側を使う
+- **コピーボタン**：URL欄の右にあるアイコンで、URLをコピーします
+- このURLを `git clone` の引数に用います
+
 ## 最小ワークフロー
 
-研究コードをGitHubへ保存する基本の流れは次の通りです。
+clone（手元にコピー）からcommit・pushまでの基本の流れは、次のGIFの通りです。
+
+![gitの最小ワークフロー（cloneからpushまで）](../../../assets/screenshots/git-workflow.gif)
+
+まずはGitHub上のコードを手元のディレクトリにcloneします（新規作成で空のRepositoryの場合は、READMEだけcloneしてもよいです）。
 
 ```bash
-# まずGithub上にあるコードを手元のディレクトリにコピー(clone)する。(新規作成する場合はスキップ)
-git clone https://github.com/OWNER/REPOSITORY.git
+# Clone URLをコピーしてcloneする
+git clone <コピーしたClone URL>
 # cloneしたリポジトリに移動する
 cd REPOSITORY
 ```
 
-編集ごとに次を実行します。
+コードを編集したあと、編集ごとに次を実行します。
 
 ```bash
 git status            # 変更されたファイルを確認
@@ -40,6 +78,11 @@ git diff --staged     # Commitに含める内容を確認
 git commit -m "change description"
 git push              # Remote Repositoryへ保存
 ```
+
+- `git status`：何が変更されたかを確認します。`modified:` や `Untracked files:` と表示される
+- `git add .`：変更をCommitに含める対象へ追加します
+- `git commit`：変更を履歴に記録します。`-m` に変更内容の短い説明を書きます
+- `git push`：Remote Repository（GitHub側）へ保存します
 
 各コマンドの役割とGitの基礎は[Pro Git](https://git-scm.com/book/ja/v2)で確認できます。
 
