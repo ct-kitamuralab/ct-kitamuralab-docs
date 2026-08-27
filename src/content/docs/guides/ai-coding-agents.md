@@ -34,7 +34,13 @@ Codex、Claude Code、OpenCodeの料金はそれぞれ独立しています。
 | [OpenCode](https://opencode.ai/ja) | ログイン不要で**一応**無料枠あり | 利用するLLMの課金に準じる | 標準で複数のLLMプロバイダに対応 |
 
 :::caution
-ChatGPTのサブスクリプション認証をOpenCodeなどの他のAgentツールで利用できる場合がありますが、公式サポートの対象外となり得ます。利用は自己責任で判断してください。(Anthropic, Googleでは明確に規約違反としています。)
+~~ChatGPTのサブスクリプション認証をOpenCodeなどの他のAgentツールで利用できる場合がありますが、公式サポートの対象外となり得ます。利用は自己責任で判断してください。~~
+
+OpenAIのCodex担当者は、ChatGPTアカウントでのサインインに対応するOpenCodeなどのOSSクライアントで、ChatGPTアカウントに含まれる利用枠を使うことは問題ないと案内しています。Anthropic、Googleでは明確に規約違反としています。
+
+> You are completely fine if you use your subscription through Sign in With ChatGPT, either through the official clients or through one of the many OSS clients (Pi, OpenCode, ...) that support signing in with your account and using your included usage.
+>
+> [Tibo (@thsottiaux) による投稿](https://x.com/thsottiaux/status/2090675027670978569)
 :::
 
 ## 基本的な使い方
