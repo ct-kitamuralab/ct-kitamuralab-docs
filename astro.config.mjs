@@ -1,10 +1,17 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import mermaid from "astro-mermaid";
 
 export default defineConfig({
   site: "https://ct-kitamuralab.github.io",
   base: process.env.BASE_PATH ?? "/",
   integrations: [
+    mermaid({
+      autoTheme: true,
+      iconPacks: [
+        { name: 'mdi', url: 'https://unpkg.com/@iconify-json/mdi@1/icons.json' },
+      ],
+    }),
     starlight({
       title: "喜多村研究室 Docs",
       description: "喜多村研究室が提供する開発環境、GPU、AI研究基盤の利用ドキュメント",
