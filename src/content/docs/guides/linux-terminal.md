@@ -1,5 +1,5 @@
 ---
-title: Linuxターミナルの基本
+title: Linux(Mac OS)ターミナルの基本
 description: Coder Workspaceでファイル操作や開発コマンドを安全に実行するための、Linuxターミナルの基本を説明します。
 ---
 
