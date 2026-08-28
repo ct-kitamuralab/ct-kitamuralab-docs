@@ -9,7 +9,7 @@ description: 手元のVS Code DesktopからCoder Workspaceへ接続する方法�
 
 1. [Visual Studio Code](https://code.visualstudio.com/)を手元のPCへインストールします。
 2. 日本語で表示したい場合は、VS Code左側の **Extensions** （四角形のアイコン）を開き、`Japanese Language Pack for Visual Studio Code` を検索してインストールします。表示言語の変更を求められたら、画面の案内に従ってVS Codeを再起動します。(ブラウザからInstallも可能です [Japanese Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja))
-3. [Tailscale](https://tailscale.com/)がConnectedであることを確認します。未設定の場合は[利用前の準備](../../getting-started/prerequisites/)を完了してください。
+3. [Tailscale](https://tailscale.com/)がConnectedであることを確認します。未設定の場合は[利用前の準備](../../prerequisites/)を完了してください。
 4. Coderへログインし、接続するWorkspaceがRunningになっていることを確認します。
 
 ## Workspaceへ接続する
@@ -31,7 +31,7 @@ description: 手元のVS Code DesktopからCoder Workspaceへ接続する方法�
 
 ## 接続できない場合
 
-まず、同じWorkspaceを[VS Code Web](../vscode-web/)で開けるか確認してください。VS Code Webも開けない場合はWorkspaceまたは接続環境、VS Code Desktopだけ開けない場合は手元のVS Codeや拡張機能に問題がある可能性があります。症状別の対応は[トラブルシューティング](../../operations/troubleshooting/)を参照してください。
+まず、同じWorkspaceを[VS Code Web](../vscode-web/)で開けるか確認してください。VS Code Webも開けない場合はWorkspaceまたは接続環境、VS Code Desktopだけ開けない場合は手元のVS Codeや拡張機能に問題がある可能性があります。症状別の対応は[トラブルシューティング](../../../operations/troubleshooting/)を参照してください。
 
 ## Next steps
 

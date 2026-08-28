@@ -11,7 +11,7 @@ VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。
 2. Workspace画面に表示される **VS Code Web** を選択します。
 3. ブラウザ内にEditorが表示されることを確認します。
 
-![VS Code Webエディタ画面](../../../assets/screenshots/vscode-web.png)
+![VS Code Webエディタ画面](../../../../assets/screenshots/vscode-web.png)
 
 ## 初回設定
 
@@ -32,7 +32,7 @@ VS Code Webは、ブラウザ上で動作するVisual Studio Code環境です。
 3. 別のブラウザまたはPrivate Windowで開く
 4. 同じWorkspaceのTerminalを開けるか確認する
 
-Terminalも開けない場合は、Workspace自体の接続に問題があると考えられます。[トラブルシューティング](../../operations/troubleshooting/)に従って、Workspace名と表示状態を管理者へ伝えてください。
+Terminalも開けない場合は、Workspace自体の接続に問題があると考えられます。[トラブルシューティング](../../../operations/troubleshooting/)に従って、Workspace名と表示状態を管理者へ伝えてください。
 
 ## Next steps
 

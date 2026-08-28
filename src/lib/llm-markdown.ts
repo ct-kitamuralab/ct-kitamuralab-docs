@@ -5,7 +5,6 @@ const base = process.env.BASE_PATH ?? "/ct-kitamuralab-docs";
 
 export const sections = [
   ["利用を始める", "getting-started/"],
-  ["Coder Workspace", "coder/"],
   ["開発ガイド", "guides/"],
   ["運用と安全", "operations/"],
   ["研究システム", "systems/"],

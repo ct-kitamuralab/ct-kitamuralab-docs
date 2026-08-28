@@ -40,10 +40,10 @@ Workspaceは利用者ごとに分離されていますが、物理的には研�
 次の制限は、他の利用者の環境とSystem全体を保護するための設計です。
 
 - WorkspaceからHost側のDockerを操作することはできません
-- Workspaceの実行先は作成後に変更できません。変更が必要な場合は新しいWorkspaceへ移行します（[Workspaceの操作](../../coder/lifecycle/)を参照）
+- Workspaceの実行先は作成後に変更できません。変更が必要な場合は新しいWorkspaceへ移行します（[Workspaceの操作](../../getting-started/coder/lifecycle/)を参照）
 - Coderへのログインは、許可されたGitHub Organizationのメンバーに限定されています
 
 ## Next steps
 
 - [トラブルシューティング](../troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
-- [ファイルと永続化](../../coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。
+- [ファイルと永続化](../../getting-started/coder/persistence/) — Workspace内で保持されるファイルの保存先とBackup方法を説明します。

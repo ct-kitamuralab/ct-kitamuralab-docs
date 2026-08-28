@@ -16,7 +16,7 @@ description: Coderを利用する前に必要なアカウント、ブラウザ�
 | [Tailscale](https://tailscale.com/)（VPN: 安全な仮想ネットワークService）アカウント | 研究室の接続環境を利用する。自分のアカウントで、管理者から案内されたShareを承認します | はい |
 | [Tailscaleアプリ](https://tailscale.com/download)（VPN接続を行うアプリ） | 手元のPCからCoderを開くための接続を確立する | はい |
 | 管理者からの接続案内（利用承認後に届く案内メール） | GitHub Organizationへの招待、Tailscale Share、Coderの接続先が案内されます | はい |
-| [VS Code Desktop](https://code.visualstudio.com/docs)（PCにインストールするコード編集アプリ） | 手元のPCのVS Codeから[Workspace](../../coder/)（利用者ごとのLinux開発環境）へ接続する | 任意 |
+| [VS Code Desktop](https://code.visualstudio.com/docs)（PCにインストールするコード編集アプリ） | 手元のPCのVS Codeから[Workspace](../coder/)（利用者ごとのLinux開発環境）へ接続する | 任意 |
 
 ## 招待を確認する
 
@@ -49,7 +49,7 @@ description: Coderを利用する前に必要なアカウント、ブラウザ�
 
 ## VS Code Desktopを使う場合
 
-[Visual Studio Code](https://code.visualstudio.com/)を手元のPCへインストールします。初回接続では、Coder関連の拡張機能の導入や接続許可を求められることがあります。画面の案内に従ってください。接続手順の詳細は[VS Code Desktop](../../coder/vscode-desktop/)で説明しています。基本操作は[Visual Studio Code公式ドキュメント](https://code.visualstudio.com/docs)で確認できます。
+[Visual Studio Code](https://code.visualstudio.com/)を手元のPCへインストールします。初回接続では、Coder関連の拡張機能の導入や接続許可を求められることがあります。画面の案内に従ってください。接続手順の詳細は[VS Code Desktop](../coder/vscode-desktop/)で説明しています。基本操作は[Visual Studio Code公式ドキュメント](https://code.visualstudio.com/docs)で確認できます。
 
 ## Next steps
 

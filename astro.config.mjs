@@ -54,17 +54,17 @@ export default defineConfig({
             { label: "利用対象と申請", slug: "getting-started/application" },
             { label: "利用前の準備", slug: "getting-started/prerequisites" },
             { label: "初回ログイン", slug: "getting-started/first-login" },
-            { label: "Workspaceを作成する", slug: "getting-started/create-workspace" },
-          ],
-        },
-        {
-          label: "Coder Workspace",
-          items: [
-            { label: "概要", slug: "coder" },
-            { label: "VS Code Web", slug: "coder/vscode-web" },
-            { label: "VS Code Desktop", slug: "coder/vscode-desktop" },
-            { label: "ファイルと永続化", slug: "coder/persistence" },
-            { label: "Workspaceの操作", slug: "coder/lifecycle" },
+            {
+              label: "Coder Workspace",
+              items: [
+                { label: "概要", slug: "getting-started/coder" },
+                { label: "Workspaceを作成する", slug: "getting-started/coder/create-workspace" },
+                { label: "VS Code Web", slug: "getting-started/coder/vscode-web" },
+                { label: "VS Code Desktop", slug: "getting-started/coder/vscode-desktop" },
+                { label: "ファイルと永続化", slug: "getting-started/coder/persistence" },
+                { label: "Workspaceの操作", slug: "getting-started/coder/lifecycle" },
+              ],
+            },
           ],
         },
         {

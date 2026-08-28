@@ -37,7 +37,7 @@ df -h /home/coder
 
 WorkspaceのStorageだけを唯一の保存先にしないでください。
 
-- 研究コードはGitHubなどのRemote Repositoryへpushする 詳しくは [GitとGitHub](../../guides/git-github) を確認してください
+- 研究コードはGitHubなどのRemote Repositoryへpushする 詳しくは [GitとGitHub](../../../guides/git-github) を確認してください
 - Gitで管理しないDataは、ローカルのPCなど別の保存先へ定期的に退避する
 - WorkspaceをDeleteする前に、必要なファイルを必ず確認する
 
@@ -48,4 +48,4 @@ Deleteの前にBackupを完了してください。削除後の復元を前提�
 ## Next steps
 
 - [Workspaceの操作](../lifecycle/) — WorkspaceのStart、Stop、Restart、Deleteと日常的な運用方法を説明します。
-- [GitとGitHub](../../guides/git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。
+- [GitとGitHub](../../../guides/git-github/) — WorkspaceでGitを設定し、研究コードをGitHubへBackupするための基本方針です。

@@ -28,4 +28,4 @@ description: 管理者から案内された接続先を使ってCoderへ初め�
 
 ## Next steps
 
-- [Workspaceを作成する](../create-workspace/) — Coderへログインし、研究用のWorkspaceを作成する手順です。
+- [Workspaceを作成する](../coder/create-workspace/) — Coderへログインし、研究用のWorkspaceを作成する手順です。

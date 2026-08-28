@@ -127,4 +127,4 @@ cloneしたRepositoryは、最初からGitHubと接続されています。編�
 ## Next steps
 
 - [変更をCommitする](../git-commit/) - VS Codeのソース管理タブを使って変更を確認し、Commitを作ります。
-- [ファイルと永続化](../../coder/persistence/) - Workspace内で保持されるファイルの保存先とBackup方法を説明します。
+- [ファイルと永続化](../../getting-started/coder/persistence/) - Workspace内で保持されるファイルの保存先とBackup方法を説明します。
