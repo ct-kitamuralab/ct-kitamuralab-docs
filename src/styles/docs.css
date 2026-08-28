@@ -105,6 +105,13 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
 .hero .tagline { max-width: 42rem; color: var(--sl-color-gray-2); font-size: 1rem; line-height: 1.75; }
 .hero .actions a { border-radius: 0.15rem; }
 
+.landing-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 1.5rem 0 2.25rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.15rem; background: var(--sl-color-gray-5); overflow: hidden; }
+.landing-directory-section { padding: 1.35rem 1.5rem 1.5rem; background: var(--sl-color-black); }
+.sl-markdown-content .landing-directory-section h3 { margin-top: 0; color: var(--sl-color-white); font-size: 1.05rem; }
+.landing-directory-section p { color: var(--sl-color-gray-2); font-size: 0.88rem; }
+.landing-directory-section ul { margin-bottom: 0; padding-inline-start: 1.1rem; }
+.landing-directory-section li { margin-top: 0.55rem; font-size: 0.88rem; line-height: 1.6; }
+
 .status-list { display: grid; gap: 0; margin: 1.5rem 0 2rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.15rem; overflow: hidden; }
 .status-row { display: grid; grid-template-columns: minmax(11rem, 1.1fr) 6.5rem 2fr; align-items: center; gap: 1rem; padding: 0.85rem 1rem; border-bottom: 1px solid var(--sl-color-gray-5); }
 .status-row:last-child { border-bottom: 0; }
@@ -137,6 +144,7 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
   .docs-page-meta > * { padding-inline: 0.55rem; }
   .status-row { grid-template-columns: 1fr auto; }
   .status-row p { grid-column: 1 / -1; }
+  .landing-directory { grid-template-columns: 1fr; }
   .quick-facts { grid-template-columns: 1fr; }
 }
 

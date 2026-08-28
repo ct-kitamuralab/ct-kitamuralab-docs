@@ -1,68 +1,49 @@
 ---
-title: 喜多村研究室 システム
-description: 開発環境、GPU、AIツールを共通の研究基盤として提供する喜多村研究室の公式ドキュメントです。
+title: 喜多村研究室 Docs
+description: 研究室システムの利用方法と、研究開発に役立つ汎用的な技術をまとめた公式ドキュメントです。
 hero:
-  tagline: 開発環境、GPU、AIツールを共通の研究基盤として整備しています。環境構築に時間を使わず、必要なシステムから研究を始められます。
+  tagline: 研究室システムの利用方法と、ターミナル、Git、Python、AIツールなど研究開発に役立つ技術をまとめています。
   actions:
-    - text: 利用を始める
-      link: getting-started/application/
+    - text: 研究室システムを使う
+      link: getting-started/
       icon: right-arrow
       variant: primary
-    - text: システムを見る
-      link: systems/
+    - text: 技術について学ぶ
+      link: "#技術について学ぶ"
       icon: open-book
       variant: minimal
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
-import SystemStatus from "../../components/SystemStatus.astro";
+このサイトには、喜多村研究室が提供するシステムの利用案内と、研究開発で必要になる汎用的な技術の解説があります。
 
-喜多村研究室が提供する開発環境、GPU、AI研究基盤の利用ドキュメントです。利用を始める場合は、[利用対象と申請](getting-started/application/)から順番に進めてください。
+## 目次
 
-## 研究のための共通基盤
+<div class="landing-directory">
+<div class="landing-directory-section">
 
-喜多村研究室では、個人のPCごとに開発環境を作り直す代わりに、研究室が管理する共通の計算環境を利用できます。Coder上の独立したWorkspaceから、ブラウザやVS Code Desktopで研究コードを実行できます。Workspaceは必要時に起動され、保存されたファイルはWorkspaceごとに保持されます。
+### 研究室のシステムを使う
 
-<div class="quick-facts">
-  <div><span>Development</span><strong>Coder Workspace</strong></div>
-  <div><span>Compute</span><strong>RTX A2000 12GB</strong></div>
-  <div><span>Access</span><strong>VS Code Web / Desktop</strong></div>
+研究室が提供する開発環境、共有GPU、AI研究基盤を利用するための案内です。
+
+- [概要](getting-started/) — 共通の開発環境と利用開始までの流れを確認します。
+- [利用対象と申請](getting-started/application/) — 利用できる人と申請方法を確認します。
+- [Coder Workspace](coder/) — ブラウザやVS Codeから利用できる開発環境を確認します。
+- [GPUを利用する](guides/gpu/) — 共有GPUの確認方法と利用上の注意を確認します。
+- [利用ルール](operations/rules/) — 共有Resource、研究Data、秘密情報の扱いを確認します。
+- [研究システム](systems/) — 提供中・準備中・検討中のシステムを確認します。
+
 </div>
+<div class="landing-directory-section">
 
-<CardGrid>
-  <Card title="すぐに使える" icon="rocket">
-    Linuxと[開発ツール](guides/development-tools/)を備えたWorkspaceを作成し、初期構築を減らして研究コードの実行から始められます。
-  </Card>
-  <Card title="環境を分離できる" icon="seti:lock">
-    依存ライブラリや実験環境はWorkspaceごとに分離され、手元のPCへ複雑なパッケージを導入する必要がありません。
-  </Card>
-  <Card title="共有GPUを利用できる" icon="seti:config">
-    RTX A2000 12GBを、機械学習、データ解析、3D処理などの計算に利用できます。
-  </Card>
-  <Card title="使い慣れた方法で接続" icon="laptop">
-    VS Code Web、ターミナル、VS Code Desktopから同じWorkspaceへ接続できます。
-  </Card>
-</CardGrid>
+### 技術について学ぶ
 
-## 提供状況
+特定の研究室システムに限らず、研究開発で利用できる基本的な技術の解説です。
 
-現在利用できる機能と、準備・検討中の研究システムを区別して掲載しています。
+- [ターミナルの基本](guides/linux-terminal/) — Commandを使ったFileやDirectoryの操作を学びます。
+- [GitとGitHub](guides/git-github/) — 変更履歴とRemote Repositoryの基本を学びます。
+- [Python環境](guides/python/) — Virtual EnvironmentとPackage管理を学びます。
+- [開発ツール](guides/development-tools/) — Workspaceで利用できる主要なToolを確認します。
+- [AI Coding Agent](guides/ai-coding-agents/) — Coding Agentの役割と安全な使い方を学びます。
 
-<SystemStatus items={[
-  { name: "Coder Workspace", status: "available", label: "提供中", description: "Python、Node.jsなどを導入したLinux環境、VS Code、共有GPUを提供しています。" },
-  { name: "AI Coding Agent CLI", status: "available", label: "提供中", description: "OpenCode、Claude Code、CodexをWorkspaceへ初期インストールしています。" },
-  { name: "LiteLLM API", status: "preparing", label: "準備中", description: "複数のLLMを共通形式で利用するAPIを整備しています。" },
-  { name: "Coding Agent標準設定", status: "preparing", label: "準備中", description: "研究室のLLM APIを初期状態から利用できる接続設定を準備しています。" },
-  { name: "Desktop Environment", status: "planned", label: "検討中", description: "GUIを必要とする研究ツール向けの環境を検討しています。" },
-  { name: "Blender / Gaussian Splatting", status: "planned", label: "デモ開発予定", description: "共有GPUを活用する3Dデモを計画しています。" },
-  { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "長期タスクに対応するAgentの活用を検討しています。" },
-]} />
-
-詳しい計画は[研究システム](systems/)と[提供状況](systems/status/)を参照してください。
-
-## Next steps
-
-- [利用対象と申請](getting-started/application/) — システムの利用対象と申請方法を説明しています。
-- [利用前の準備](getting-started/prerequisites/) — 初回ログイン前に必要なアカウント、ブラウザ、エディターを確認します。
-- [Coder Workspace 概要](coder/) — 研究室が提供する Workspace の概要と利用可能な機能を確認します。
-- [システム一覧](systems/) — 提供・準備・検討中の研究システムを一覧できます。
+</div>
+</div>

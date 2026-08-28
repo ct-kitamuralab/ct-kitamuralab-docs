@@ -10,14 +10,14 @@ import SystemStatus from "../../../components/SystemStatus.astro";
 ## 現在の状況
 
 <SystemStatus items={[
-  { name: "Coder Workspace", status: "available", label: "提供中", description: "承認された利用者が利用できます。" },
+  { name: "Coder Workspace", status: "available", label: "提供中", description: "承認された利用者に、PythonやNode.jsなどを導入したLinux環境、VS Code、共有GPUを提供しています。" },
   { name: "AI Coding Agent CLI", status: "available", label: "提供中", description: "OpenCode、Claude Code、CodexをWorkspaceへ初期インストールしています。" },
   { name: "開発ツールの拡充", status: "preparing", label: "準備中", description: "pnpm、Java、Rust、C/C++、C#、Rの追加を予定しています。" },
-  { name: "LiteLLM API", status: "preparing", label: "準備中", description: "提供に向けて構成と運用方法を整備しています。" },
+  { name: "LiteLLM API", status: "preparing", label: "準備中", description: "複数のLLMを共通形式で利用できるよう、構成と運用方法を整備しています。" },
   { name: "Coding Agent標準設定", status: "preparing", label: "準備中", description: "研究室のLLM APIを初期状態から利用できる接続設定をWorkspaceへ組み込む予定です。" },
-  { name: "Desktop Environment", status: "planned", label: "検討中", description: "実現方法、GPU対応、運用負荷を検討しています。" },
+  { name: "Desktop Environment", status: "planned", label: "検討中", description: "GUIを必要とする研究Tool向けに、実現方法、GPU対応、運用負荷を検討しています。" },
   { name: "Blender / Gaussian Splatting", status: "planned", label: "デモ開発予定", description: "共有GPUの活用を紹介するデモを計画しています。" },
-  { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "安全性とResource利用を含めて検証候補としています。" },
+  { name: "Hermes Agent", status: "experimental", label: "実験候補", description: "長期Taskに対応するAgentについて、安全性とResource利用を含めて検証候補としています。" },
 ]} />
 
 ## Statusの意味

@@ -14,7 +14,7 @@ export default defineConfig({
     }),
     starlight({
       title: "喜多村研究室 Docs",
-      description: "喜多村研究室が提供する開発環境、GPU、AI研究基盤の利用ドキュメント",
+      description: "研究室システムの利用方法と、研究開発に役立つ汎用的な技術をまとめたドキュメント",
       favicon: "/favicon.svg",
       locales: {
         root: {
@@ -50,6 +50,7 @@ export default defineConfig({
         {
           label: "利用を始める",
           items: [
+            { label: "概要", slug: "getting-started" },
             { label: "利用対象と申請", slug: "getting-started/application" },
             { label: "利用前の準備", slug: "getting-started/prerequisites" },
             { label: "初回ログイン", slug: "getting-started/first-login" },

@@ -1,0 +1,85 @@
+---
+title: 概要
+description: 喜多村研究室が提供する開発環境、共有GPU、AI研究基盤の概要と利用開始までの流れです。
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+喜多村研究室では、個人のPCごとに開発環境を作り直す代わりに、研究室が管理する共通の計算環境を利用できます。このページでは、利用できる環境の概要と、利用開始までに読むページの順序を説明します。
+
+## 研究のための共通基盤
+
+Coder上の独立したWorkspaceから、ブラウザやVS Code Desktopで研究コードを実行できます。Workspaceは必要なときに起動し、保存したファイルはWorkspaceごとに保持されます。
+
+### Workspaceごとに分離された環境
+
+複数人が同時にCoderへ接続しても、利用者はそれぞれ独立したWorkspaceを使用します。あるWorkspaceでFileを変更したりPackageを追加したりしても、他の利用者のWorkspaceは変更されません。
+
+```mermaid
+flowchart LR
+  subgraph Users[複数人が同時に利用]
+    direction TB
+    UserA@{ icon: "mdi:laptop", form: "rounded", label: "利用者AのPC" }
+    UserB@{ icon: "mdi:laptop", form: "rounded", label: "利用者BのPC" }
+    UserC@{ icon: "mdi:laptop", form: "rounded", label: "利用者CのPC" }
+  end
+
+  subgraph Isolated[Coder上でWorkspaceごとに分離]
+    direction TB
+    A["利用者AのWorkspace<br/>File / Process / Package / 設定"]
+    B["利用者BのWorkspace<br/>File / Process / Package / 設定"]
+    C["利用者CのWorkspace<br/>File / Process / Package / 設定"]
+  end
+
+  GPU@{ icon: "mdi:expansion-card", form: "rounded", label: "計算リソース" }
+
+  UserA -->|Coderで接続| A
+  UserB -->|Coderで接続| B
+  UserC -->|Coderで接続| C
+  A -..-> GPU
+  B -..-> GPU
+  C -..-> GPU
+
+  classDef user fill:#087f78,stroke:#b9eeea,color:#ffffff,stroke-width:2px
+  classDef workspace fill:#087f78,stroke:#064e4a,color:#ffffff,stroke-width:2px
+  classDef compute fill:#65487c,stroke:#d6b7e9,color:#ffffff,stroke-width:2px
+  class UserA,UserB,UserC user
+  class A,B,C workspace
+  class GPU compute
+  linkStyle 0,1,2 stroke:#087f78,stroke-width:2px
+  linkStyle 3,4,5 stroke:#65487c,stroke-width:2px
+```
+
+Workspaceごとに、File、Process、Package、開発Toolの設定、VS CodeやTerminalの接続先が分離されます。
+
+<div class="quick-facts">
+  <div><span>Development</span><strong>Coder Workspace</strong></div>
+  <div><span>Compute</span><strong>RTX A2000 12GB</strong></div>
+  <div><span>Access</span><strong>VS Code Web / Desktop</strong></div>
+</div>
+
+<CardGrid>
+  <Card title="すぐに使える" icon="rocket">
+    Linuxと[開発ツール](../guides/development-tools/)を備えたWorkspaceを作成し、初期構築を減らして研究コードの実行から始められます。
+  </Card>
+  <Card title="環境を分離できる" icon="seti:lock">
+    依存ライブラリや実験環境はWorkspaceごとに分離され、手元のPCへ複雑なPackageを導入する必要がありません。
+  </Card>
+  <Card title="共有GPUを利用できる" icon="seti:config">
+    RTX A2000 12GBを、機械学習、Data解析、3D処理などの計算に利用できます。
+  </Card>
+  <Card title="使い慣れた方法で接続" icon="laptop">
+    VS Code Web、Terminal、VS Code Desktopから同じWorkspaceへ接続できます。
+  </Card>
+</CardGrid>
+
+## 利用開始の流れ
+
+初めて利用する場合は、次の順番で進めてください。
+
+1. [利用対象と申請](application/) — システムを利用できる人と申請方法を確認します。
+2. [利用前の準備](prerequisites/) — 必要なAccount、Browser、Editorを準備します。
+3. [初回ログイン](first-login/) — 管理者から案内された接続先へ初めてログインします。
+4. [Workspaceを作成する](create-workspace/) — 自分の開発環境を作成して起動します。
+
+Workspaceを作成した後の接続方法やFile管理は、[Coder Workspace概要](../coder/)から確認できます。提供中・準備中・検討中の機能は、[研究システム](../systems/)と[提供状況](../systems/status/)に分けて掲載しています。
