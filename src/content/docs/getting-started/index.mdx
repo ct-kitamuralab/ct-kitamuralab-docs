@@ -11,6 +11,12 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
 
 Coder上の独立したWorkspaceから、ブラウザやVS Code Desktopで研究コードを実行できます。Workspaceは必要なときに起動し、保存したファイルはWorkspaceごとに保持されます。
 
+### VPNを経由したリモート接続
+
+研究室のシステムは一般公開されていないため、手元のPCから利用する際は、VPN（安全な仮想ネットワーク）である[Tailscale](https://tailscale.com/)を経由して接続します。VPNを使うことで、研究室システムへアクセスできる利用者を限定しながら、ブラウザやVS Code DesktopからWorkspaceを利用できます。
+
+利用には管理者の承認とTailscale Shareの承認が必要です。接続先は利用承認後に管理者から個別に案内されます。設定方法は[利用前の準備](prerequisites/)を参照してください。
+
 ### Workspaceごとに分離された環境
 
 複数人が同時にCoderへ接続しても、利用者はそれぞれ独立したWorkspaceを使用します。あるWorkspaceでFileを変更したりPackageを追加したりしても、他の利用者のWorkspaceは変更されません。
@@ -31,23 +37,30 @@ flowchart LR
     C["利用者CのWorkspace<br/>File / Process / Package / 設定"]
   end
 
+  VPN@{ icon: "mdi:shield-lock-outline", form: "rounded", label: "VPN<br/>Tailscale" }
   GPU@{ icon: "mdi:expansion-card", form: "rounded", label: "計算リソース" }
 
-  UserA -->|Coderで接続| A
-  UserB -->|Coderで接続| B
-  UserC -->|Coderで接続| C
+  UserA -->|VPN接続| VPN
+  UserB -->|VPN接続| VPN
+  UserC -->|VPN接続| VPN
+  VPN -->|Coderで接続| A
+  VPN -->|Coderで接続| B
+  VPN -->|Coderで接続| C
   A -..-> GPU
   B -..-> GPU
   C -..-> GPU
 
   classDef user fill:#087f78,stroke:#b9eeea,color:#ffffff,stroke-width:2px
+  classDef vpn fill:#426aa0,stroke:#c6dcff,color:#ffffff,stroke-width:2px
   classDef workspace fill:#087f78,stroke:#064e4a,color:#ffffff,stroke-width:2px
   classDef compute fill:#65487c,stroke:#d6b7e9,color:#ffffff,stroke-width:2px
   class UserA,UserB,UserC user
+  class VPN vpn
   class A,B,C workspace
   class GPU compute
   linkStyle 0,1,2 stroke:#087f78,stroke-width:2px
-  linkStyle 3,4,5 stroke:#65487c,stroke-width:2px
+  linkStyle 3,4,5 stroke:#426aa0,stroke-width:2px
+  linkStyle 6,7,8 stroke:#65487c,stroke-width:2px
 ```
 
 Workspaceごとに、File、Process、Package、開発Toolの設定、VS CodeやTerminalの接続先が分離されます。
@@ -55,7 +68,7 @@ Workspaceごとに、File、Process、Package、開発Toolの設定、VS Codeや
 <div class="quick-facts">
   <div><span>Development</span><strong>Coder Workspace</strong></div>
   <div><span>Compute</span><strong>RTX A2000 12GB</strong></div>
-  <div><span>Access</span><strong>VS Code Web / Desktop</strong></div>
+  <div><span>Access</span><strong>VPN / VS Code Web / Desktop</strong></div>
 </div>
 
 <CardGrid>
