@@ -209,7 +209,7 @@ brew install gh
 <summary>Windows</summary>
 
 ```bash
-winget install GitHub.cli
+winget install --id GitHub.cli --source winget
 ```
 
 </details>
@@ -217,8 +217,12 @@ winget install GitHub.cli
 <details>
 <summary>Ubuntu</summary>
 
+Ubuntuでは、GitHub CLIの[公式インストール手順](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian)に従ってインストールしてください。
+
+または、Homebrewが使える場合は次のコマンドでインストールできます。
+
 ```bash
-sudo apt install gh
+brew install gh
 ```
 
 </details>
