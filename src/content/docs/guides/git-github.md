@@ -188,6 +188,70 @@ git config --global user.email "you@example.com"
 - `user.name`: Commitに記録する名前です。
 - `user.email`: Commitに記録するメールアドレスです。
 
+#### Githubアカウントを既に作成済みの場合
+<details>
+<summary>GitHub CLIを使って自動設定する</summary>
+
+GitHub CLI（`gh`）を使うと、GitHubアカウントの情報から名前とメールアドレスを自動取得できます。
+
+### GitHub CLIをインストールする
+
+<details>
+<summary>macOS</summary>
+
+```bash
+brew install gh
+```
+
+</details>
+
+<details>
+<summary>Windows</summary>
+
+```bash
+winget install GitHub.cli
+```
+
+</details>
+
+<details>
+<summary>Ubuntu</summary>
+
+```bash
+sudo apt install gh
+```
+
+</details>
+
+### GitHubにログインする
+
+```bash
+gh auth login
+```
+
+画面の案内に従って、GitHubアカウントでログインします。ブラウザでの認証が必要な場合があります。
+
+### Git設定と認証を自動で行う
+
+GitHubへのpush/pullの自動認証は次のコマンドで行います。
+
+```bash
+gh auth setup-git
+```
+
+名前とメールアドレスの設定は、次のコマンドで自動取得できます。
+
+```bash
+git config --global user.name "$(gh api user --jq '.name // .login')"
+git config --global user.email "$(gh api user --jq '"\(.id)+\(.login)@users.noreply.github.com"')"
+```
+
+- `gh api user`: GitHubのアカウント情報を取得するAPIです（デフォルトスコープで利用可能）
+- `.name // .login`: 表示名があればそれを使う。表示名がない場合はログイン名を使う
+- `.id`と`.login`: GitHubの非公開メールアドレス（`xxx+username@users.noreply.github.com`）を構築するために使います
+- 実行後、`git config --global --list` で設定内容を確認できます。
+</details>
+
 :::note
 名前とメールアドレスはCommit履歴に残ります。外部へ共有する可能性があるRepositoryでは、公開してよい情報を設定してください。  
 基本的にGithubに登録したユーザーネームとそのメールアドレス(匿名メールアドレスも可 参考: [【Git】メールアドレスを非公開にする](https://qiita.com/P-man_Brown/items/66291370639294d7ffc8))を設定します。
