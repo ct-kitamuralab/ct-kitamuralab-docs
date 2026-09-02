@@ -40,6 +40,25 @@ flowchart LR
   Edit --> Diff --> Stage --> Commit
 ```
 
+## Gitが使えるか確認する
+
+Terminalを開き、次のコマンドを実行します。
+
+```bash
+git --version
+```
+
+- `git`: Gitを操作するコマンドです。
+- `--version`: Gitのバージョンを表示するオプションです。
+
+次のようにバージョン番号が表示されれば、Gitを利用できます。番号は例であり、一致する必要はありません。
+
+```text
+git version 2.43.0
+```
+
+`command not found` と表示される場合は、Gitを実行できる状態ではありません。Coder Workspace内で発生した場合は、Workspace名とエラー内容を管理者へ伝えてください。
+
 ## Gitをインストールする
 
 Gitを使うPCへGitをインストールします。Coder WorkspaceにはGitが導入済みですが、手元のPCでGitを使う場合は、使っているOSに対応する手順を実行してください。
@@ -101,25 +120,6 @@ git --version
 Git公式は、Debian系LinuxであるUbuntuでは`apt`による導入を案内しています。ほかのLinuxディストリビューションを使う場合は、[Git公式のLinux用インストール手順](https://git-scm.com/download/linux)を確認してください。
 
 </details>
-
-## Gitが使えるか確認する
-
-Terminalを開き、次のコマンドを実行します。
-
-```bash
-git --version
-```
-
-- `git`: Gitを操作するコマンドです。
-- `--version`: Gitのバージョンを表示するオプションです。
-
-次のようにバージョン番号が表示されれば、Gitを利用できます。番号は例であり、一致する必要はありません。
-
-```text
-git version 2.43.0
-```
-
-`command not found` と表示される場合は、Gitを実行できる状態ではありません。Coder Workspaceで発生した場合は、Workspace名とエラー内容を管理者へ伝えてください。
 
 ## 作業フォルダでGitを始める
 
