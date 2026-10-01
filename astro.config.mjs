@@ -80,7 +80,13 @@ export default defineConfig({
                 { label: "GitHubへ保存する", slug: "guides/github" },
               ],
             },
-            { label: "Python環境", slug: "guides/python" },
+            {
+              label: "Python",
+              items: [
+                { label: "Python環境", slug: "guides/python" },
+                { label: "パッケージ管理：pipとuv", slug: "guides/python-packages" },
+              ],
+            },
             { label: "開発ツール", slug: "guides/development-tools" },
             {
               label: "AI Coding Agent",
