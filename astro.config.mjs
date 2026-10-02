@@ -61,6 +61,8 @@ export default defineConfig({
                 { label: "Workspaceを作成する", slug: "getting-started/coder/create-workspace" },
                 { label: "VS Code Web", slug: "getting-started/coder/vscode-web" },
                 { label: "VS Code Desktop", slug: "getting-started/coder/vscode-desktop" },
+                { label: "開発ツール", slug: "getting-started/coder/development-tools" },
+                { label: "GPUを利用する", slug: "getting-started/coder/gpu" },
                 { label: "ファイルと永続化", slug: "getting-started/coder/persistence" },
                 { label: "Workspaceの操作", slug: "getting-started/coder/lifecycle" },
               ],
@@ -71,7 +73,6 @@ export default defineConfig({
           label: "開発ガイド",
           items: [
             { label: "Linux(Mac OS)ターミナルの基本", slug: "guides/linux-terminal" },
-            { label: "GPUを利用する", slug: "guides/gpu" },
             {
               label: "Git/Github",
               items: [
@@ -93,10 +94,10 @@ export default defineConfig({
                 { label: "DBの考え方と使い分け", slug: "guides/database" },
                 { label: "SQLiteの導入", slug: "guides/database/sqlite-installation" },
                 { label: "基本操作", slug: "guides/database/table-design" },
+                { label: "テーブルの正規化", slug: "guides/database/normalization" },
                 { label: "DB用語集", slug: "guides/database/glossary" },
               ],
             },
-            { label: "開発ツール", slug: "guides/development-tools" },
             {
               label: "AI Coding Agent",
               items: [
@@ -111,13 +112,6 @@ export default defineConfig({
           items: [
             { label: "利用ルール", slug: "operations/rules" },
             { label: "トラブルシューティング", slug: "operations/troubleshooting" },
-          ],
-        },
-        {
-          label: "研究システム",
-          items: [
-            { label: "システム一覧", slug: "systems" },
-            { label: "提供状況", slug: "systems/status" },
           ],
         },
       ],

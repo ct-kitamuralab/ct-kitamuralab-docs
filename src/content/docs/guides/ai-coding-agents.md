@@ -82,6 +82,6 @@ OpenCode、Claude Code、Codex、PiのCLIは導入済みです。研究室向け
 
 ## Next steps
 
-- PackageやCLIの標準環境を確認する: [開発ツール](../development-tools/)
+- PackageやCLIの標準環境を確認する: [開発ツール](../../getting-started/coder/development-tools/)
 - 変更履歴とBackupを管理する: [GitとGitHub](../git-github/)
 - Python Projectを再現可能にする: [Python環境](../python/)

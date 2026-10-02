@@ -52,20 +52,19 @@ describe("llm-markdown: URL helpers", () => {
 });
 
 describe("llm-markdown: sections", () => {
-  it("sections は 4 セクションを定義する", async () => {
+  it("sections は 3 セクションを定義する", async () => {
     const { sections } = await load(DEFAULT_BASE);
     expect(sections).toEqual([
       ["利用を始める", "getting-started/"],
       ["開発ガイド", "guides/"],
       ["運用と安全", "operations/"],
-      ["研究システム", "systems/"],
     ]);
   });
 
   it("sectionFor はセクションルートを一致させる", async () => {
     const { sectionFor } = await load(DEFAULT_BASE);
     expect(sectionFor("getting-started/coder")).toEqual(["利用を始める", "getting-started/"]);
-    expect(sectionFor("systems")).toEqual(["研究システム", "systems/"]);
+    expect(sectionFor("guides")).toEqual(["開発ガイド", "guides/"]);
   });
 
   it("sectionFor はネストIDをセクションへ解決する", async () => {
@@ -82,7 +81,7 @@ describe("llm-markdown: sections", () => {
   it("sectionLlmsUrl はセクションページの llms.txt を返す", async () => {
     const { sectionLlmsUrl } = await load(DEFAULT_BASE);
     expect(sectionLlmsUrl("getting-started/coder")).toBe(`${SITE}${DEFAULT_BASE}/getting-started/llms.txt`);
-    expect(sectionLlmsUrl("systems/status")).toBe(`${SITE}${DEFAULT_BASE}/systems/llms.txt`);
+    expect(sectionLlmsUrl("getting-started/coder/gpu")).toBe(`${SITE}${DEFAULT_BASE}/getting-started/llms.txt`);
   });
 
   it("sectionLlmsUrl はセクション外をルート llms.txt へ解決する", async () => {
@@ -106,7 +105,7 @@ describe("llm-markdown: renderMarkdown", () => {
   it("import 文を除去する", async () => {
     const { renderMarkdown } = await load(DEFAULT_BASE);
     const out = renderMarkdown(
-      entry("systems/status", 'import SystemStatus from "../../components/SystemStatus.astro";\n\n本文です。'),
+      entry("getting-started/coder", 'import SystemStatus from "../../components/SystemStatus.astro";\n\n本文です。'),
       "2026-08-16",
     );
     expect(out).not.toContain("import SystemStatus");
@@ -121,7 +120,7 @@ describe("llm-markdown: renderMarkdown", () => {
       '  { name: "LiteLLM API", status: "preparing", label: "準備中", description: "APIを整備しています。" },',
       "]} />",
     ].join("\n");
-    const out = renderMarkdown(entry("systems/status", body), "2026-08-16");
+    const out = renderMarkdown(entry("getting-started/coder", body), "2026-08-16");
     expect(out).toContain("| システム | 提供状況 | 説明 |");
     expect(out).toContain("| --- | --- | --- |");
     expect(out).toContain("| Coder Workspace | 提供中 | 承認された利用者が利用できます。 |");
@@ -189,10 +188,10 @@ describe("llm-markdown: renderMarkdown", () => {
 
   it("相対リンクを絶対URLへ変換する", async () => {
     const { renderMarkdown } = await load(DEFAULT_BASE);
-    const body = "リンク: [申請](../application/) と [GPU](../../guides/gpu/)。";
+    const body = "リンク: [申請](../application/) と [GPU](gpu/)。";
     const out = renderMarkdown(entry("getting-started/coder", body), "2026-08-16");
     expect(out).toContain(`[申請](${SITE}${DEFAULT_BASE}/getting-started/application/)`);
-    expect(out).toContain(`[GPU](${SITE}${DEFAULT_BASE}/guides/gpu/)`);
+    expect(out).toContain(`[GPU](${SITE}${DEFAULT_BASE}/getting-started/coder/gpu/)`);
   });
 
   it("外部リンク、アンカー、mailto は変換しない", async () => {
@@ -226,8 +225,9 @@ describe("llm-markdown: renderLlms", () => {
     entry("getting-started", "", { title: "概要" }),
     entry("getting-started/coder", "", { title: "Coder Workspace" }),
     entry("getting-started/coder/vscode-web", "", { title: "VS Code Web" }),
-    entry("systems", "", { title: "研究システム" }),
-    entry("systems/status", "", { title: "提供状況" }),
+    entry("getting-started/coder/development-tools", "", { title: "開発ツール" }),
+    entry("getting-started/coder/gpu", "", { title: "GPUを利用する" }),
+    entry("guides/python", "", { title: "Python環境" }),
   ];
 
   it("ルート llms.txt にセクション順でページを列挙する", async () => {
@@ -237,11 +237,13 @@ describe("llm-markdown: renderLlms", () => {
     expect(out).toContain("## 利用を始める");
     expect(out).toContain(`- [Coder Workspace](${SITE}${DEFAULT_BASE}/getting-started/coder.md): テスト用の説明です。`);
     expect(out).toContain(`- [VS Code Web](${SITE}${DEFAULT_BASE}/getting-started/coder/vscode-web.md): テスト用の説明です。`);
-    expect(out).toContain("## 研究システム");
-    expect(out).toContain(`- [提供状況](${SITE}${DEFAULT_BASE}/systems/status.md): テスト用の説明です。`);
+    expect(out).toContain(`- [開発ツール](${SITE}${DEFAULT_BASE}/getting-started/coder/development-tools.md): テスト用の説明です。`);
+    expect(out).toContain(`- [GPUを利用する](${SITE}${DEFAULT_BASE}/getting-started/coder/gpu.md): テスト用の説明です。`);
+    expect(out).toContain("## 開発ガイド");
+    expect(out).not.toContain("## 研究システム");
     const coderPos = out.indexOf("## 利用を始める");
-    const systemsPos = out.indexOf("## 研究システム");
-    expect(coderPos).toBeLessThan(systemsPos);
+    const guidesPos = out.indexOf("## 開発ガイド");
+    expect(coderPos).toBeLessThan(guidesPos);
   });
 
   it("ルート llms.txt に Optional セクションを含める", async () => {
@@ -264,6 +266,7 @@ describe("llm-markdown: renderLlms", () => {
     const out = renderLlms(entries.filter((e) => e.id === "getting-started" || e.id.startsWith("getting-started/")), "getting-started | 喜多村研究室 Docs");
     expect(out).toContain("## 利用を始める");
     expect(out).not.toContain("## 運用と安全");
+    expect(out).not.toContain("## 開発ガイド");
     expect(out).not.toContain("## 研究システム");
   });
 });

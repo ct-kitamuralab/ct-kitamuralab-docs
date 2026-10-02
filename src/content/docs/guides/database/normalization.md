@@ -88,7 +88,7 @@ CREATE TABLE weather_observations (
 
 `REFERENCES weather_stations(id)` が参照先の指定です。地点表にはIDが1と2しかないため、地点IDが99の観測を追加すると拒否されます。
 
-`PRAGMA foreign_keys = ON;` は外部キーの検査を有効にします。`UNIQUE (station_id, observed_at)` は同じ地点・時刻の観測の二重登録を拒否します。この定義による表の作成とデータの追加は、次の[天気データの保存と検索](../sqlite/)で行います。
+`PRAGMA foreign_keys = ON;` は外部キーの検査を有効にします。`UNIQUE (station_id, observed_at)` は同じ地点・時刻の観測の二重登録を拒否します。表の作成・データの追加・検索の基本は、[基本操作](../table-design/)で確認できます。
 
 <details>
 <summary>補足：地点情報の履歴</summary>
@@ -118,4 +118,7 @@ CREATE TABLE weather_observations (
 
 外部キーの詳しい条件は、[SQLite公式の外部キーガイド](https://sqlite.org/foreignkeys.html)を参照してください。
 
-次は[天気データの保存と検索](../sqlite/)で、同じDBに観測表を追加し、天気データを登録します。
+## Next steps
+
+- [基本操作](../table-design/) — 地点表の作成・データの追加・検索の手順を確認します。
+- [DB用語集](../glossary/) — 主キーや外部キーなど、テーブル設計で使う用語を確認します。

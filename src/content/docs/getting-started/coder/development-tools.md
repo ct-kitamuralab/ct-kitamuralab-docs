@@ -22,9 +22,9 @@ Coder Workspaceには、研究コードの開発・管理に必要な基本ツ�
 | [ccache](https://ccache.dev/) | C/C++のCompileを高速化する | [ccache公式](https://ccache.dev/) |
 | [build-essential](https://packages.ubuntu.com/noble/build-essential) | CコンパイラのToolchain（gcc、g++、make） | [UbuntuのPackageページ](https://packages.ubuntu.com/noble/build-essential) |
 | [VS Code](https://code.visualstudio.com/) | コードを編集する | [VS Code Docs](https://code.visualstudio.com/docs) |
-| AI Coding Agent | AIを使ったコード作成・レビュー支援 | [AI Coding Agent](../ai-coding-agents/) |
+| AI Coding Agent | AIを使ったコード作成・レビュー支援 | [AI Coding Agent](../../../guides/ai-coding-agents/) |
 
-PythonのProject環境は、[Python環境](../python/)を参照してください。
+PythonのProject環境は、[Python環境](../../../guides/python/)を参照してください。
 
 Workspace作成時にzsh-dotfilesを有効にすると、zshと研究室向けの設定を利用できます。
 
@@ -128,17 +128,17 @@ LaTeXの詳しい書き方は[日本語TeXユーザーグループ](https://www.
 
 ## GitHub CLIを使う
 
-`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。Gitで作成したCommitをGitHubへ保存する基本操作は、[GitHubへ保存する](../github/)で説明しています。
+`gh`はTerminalからRepository、Issue、Pull Requestを操作できます。Gitで作成したCommitをGitHubへ保存する基本操作は、[GitHubへ保存する](../../../guides/github/)で説明しています。
 
 :::caution
-公開Repositoryへ研究データや秘密情報をpushしないよう、[GitHubへ保存する](../github/)の注意事項も確認してください。
+公開Repositoryへ研究データや秘密情報をpushしないよう、[GitHubへ保存する](../../../guides/github/)の注意事項も確認してください。
 :::
 
 ## 保存場所
 
-Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存してください。保存先のルールは[ファイルと永続化](../../getting-started/coder/persistence/)で説明しています。
+Project、設定、Virtual Environmentなどは`/home/coder`以下へ保存してください。保存先のルールは[ファイルと永続化](../persistence/)で説明しています。
 
 ## Next steps
 
-- [Python環境](../python/) — Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
-- [AI Coding Agent](../ai-coding-agents/) — Workspaceに導入されているAI Coding Agentの用途、安全な利用方法、公式ドキュメントを案内します。
+- [Python環境](../../../guides/python/) — Workspace内に再現可能なPython Virtual Environmentを構築する方法です。
+- [AI Coding Agent](../../../guides/ai-coding-agents/) — Workspaceに導入されているAI Coding Agentの用途、安全な利用方法、公式ドキュメントを案内します。

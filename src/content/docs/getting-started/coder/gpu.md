@@ -54,7 +54,7 @@ x = torch.randn(1024, 1024, device=device)
 print(x @ x)
 ```
 
-Packageの導入方法は[Python環境](../python/)を参照してください。
+Packageの導入方法は[Python環境](../../../guides/python/)を参照してください。
 
 ## 利用上の注意
 
@@ -73,5 +73,5 @@ Packageの導入方法は[Python環境](../python/)を参照してください�
 
 ## Next steps
 
-- [利用ルール](../../operations/rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
-- [トラブルシューティング](../../operations/troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。
+- [利用ルール](../../../operations/rules/) — 共有GPU、研究Data、秘密情報を安全に扱うための利用ルールです。
+- [トラブルシューティング](../../../operations/troubleshooting/) — Coder、Workspace、VS Code、GPUで問題が発生した場合の確認手順です。

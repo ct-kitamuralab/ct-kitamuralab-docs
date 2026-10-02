@@ -12,7 +12,7 @@ GPUやWorkspaceは研究室で共有するResourceです。他の利用者に影
 - 作業終了後はWorkspaceをStopする
 - 不要なProcessやJobを放置しない
 - 他の利用者のWorkspaceやProcessへ干渉しない
-- GPUを長時間使用する場合は、他の利用者と調整する。確認コマンドとマナーは[GPUを利用する](../../guides/gpu/)で説明しています
+- GPUを長時間使用する場合は、他の利用者と調整する。確認コマンドとマナーは[GPUを利用する](../../getting-started/coder/gpu/)で説明しています
 
 ## Data
 

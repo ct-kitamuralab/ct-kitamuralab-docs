@@ -7,7 +7,6 @@ export const sections = [
   ["利用を始める", "getting-started/"],
   ["開発ガイド", "guides/"],
   ["運用と安全", "operations/"],
-  ["研究システム", "systems/"],
 ] as const;
 
 type DocEntry = CollectionEntry<"docs">;

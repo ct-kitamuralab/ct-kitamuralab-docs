@@ -283,7 +283,7 @@ Pythonの場所を確認し、[Python環境](../python/)の手順で仮想環境
 ## Next steps
 
 - [GitHubへ保存する](../github/) — コードと依存関係の記録をGitHubへ保存する手順を確認します。
-- [GPUを利用する](../gpu/) — PyTorchなど、GPU用パッケージの導入条件を確認します。
+- [GPUを利用する](../../getting-started/coder/gpu/) — PyTorchなど、GPU用パッケージの導入条件を確認します。
 - [pip公式ユーザーガイド](https://pip.pypa.io/en/stable/user_guide/) — バージョン指定やインストール方法の詳細を確認できます。
 - [uv公式プロジェクトガイド](https://docs.astral.sh/uv/guides/projects/) — プロジェクト管理の全体像と、依存関係の更新方法を確認できます。
 - [uv公式のpip互換性の説明](https://docs.astral.sh/uv/pip/compatibility/) — pipから操作を置き換える際の設定・動作の違いを確認できます。

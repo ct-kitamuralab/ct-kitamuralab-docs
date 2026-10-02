@@ -4,9 +4,9 @@
 
 ## 主な内容
 
-- Coder Workspace の利用開始、接続、永続化、操作方法
-- GPU、Python、Git/GitHub、AI Coding Agent などの開発ガイド
-- 研究システムの提供状況、利用ルール、トラブルシューティング
+- Coder Workspace の利用開始、接続、開発ツール、GPU、永続化、操作方法
+- Python、Git/GitHub、AI Coding Agent などの開発ガイド
+- 利用ルール、トラブルシューティング
 
 接続先や認証情報などの非公開情報はリポジトリに記載しません。利用承認後に管理者から個別に案内します。
 

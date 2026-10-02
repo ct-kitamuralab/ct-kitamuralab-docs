@@ -17,9 +17,9 @@ Workspaceは利用者専用のLinux開発環境です。Containerとして起動
 
 - ブラウザ上の[Terminal](create-workspace/)と[VS Code Web](vscode-web/)
 - [VS Code Desktop](vscode-desktop/)からのRemote接続
-- 共有[GPU（RTX A2000 12GB）](../../guides/gpu/)の利用
+- 共有[GPU（RTX A2000 12GB）](gpu/)の利用
 - Workspaceごとの[永続Storage](persistence/)
-- [Git](../../guides/git-github/)と一般的な[開発Tool](../../guides/development-tools/)
+- [Git](../../guides/git-github/)と一般的な[開発Tool](development-tools/)
 
 ## 基本的な利用の流れ
 
@@ -34,4 +34,4 @@ Workspaceは利用者専用のLinux開発環境です。Containerとして起動
 - 初めてWorkspaceを作る: [Workspaceを作成する](create-workspace/)
 - ブラウザで開発する: [VS Code Web](vscode-web/)
 - データの保存先を確認する: [ファイルと永続化](persistence/)
-- 標準の開発環境を確認する: [開発ツール](../../guides/development-tools/)
+- 標準の開発環境を確認する: [開発ツール](development-tools/)

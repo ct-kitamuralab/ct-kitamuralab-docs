@@ -118,5 +118,5 @@ Coder Workspaceの保存場所については、[ファイルと永続化](../..
 ## Next steps
 
 - [Pythonのパッケージ管理：pipとuv](../python-packages/) — ライブラリの追加、依存関係の記録、別の環境での復元を学びます。
-- [GPUを利用する](../gpu/) — GPUの確認と、GPU計算に必要なPythonライブラリの注意点を確認します。
+- [GPUを利用する](../../getting-started/coder/gpu/) — GPUの確認と、GPU計算に必要なPythonライブラリの注意点を確認します。
 - [Python公式のvenvドキュメント](https://docs.python.org/3/library/venv.html) — Windowsなど、ほかのOS・Shellでの有効化方法も確認できます。
