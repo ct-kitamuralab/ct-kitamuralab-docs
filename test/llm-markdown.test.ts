@@ -176,6 +176,17 @@ describe("llm-markdown: renderMarkdown", () => {
     }
   });
 
+  it("ルビを読み仮名付きのテキストへ変換する", async () => {
+    const { renderMarkdown } = await load(DEFAULT_BASE);
+    const body = "| <ruby>行<rt>ぎょう</rt></ruby>（レコード） | <ruby>SQL<rt>エスキューエル</rt></ruby> |\n<ruby>主<rt>しゅ</rt></ruby>キー";
+    const out = renderMarkdown(entry("guides/database", body), "2026-08-16");
+    expect(out).toContain("| 行（ぎょう）（レコード） | SQL（エスキューエル） |");
+    expect(out).toContain("主（しゅ）キー");
+    for (const tag of ["<ruby", "</ruby", "<rt", "</rt"]) {
+      expect(out).not.toContain(tag);
+    }
+  });
+
   it("相対リンクを絶対URLへ変換する", async () => {
     const { renderMarkdown } = await load(DEFAULT_BASE);
     const body = "リンク: [申請](../application/) と [GPU](../../guides/gpu/)。";

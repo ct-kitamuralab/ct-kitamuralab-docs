@@ -87,6 +87,15 @@ export default defineConfig({
                 { label: "パッケージ管理：pipとuv", slug: "guides/python-packages" },
               ],
             },
+            {
+              label: "データベース",
+              items: [
+                { label: "DBの考え方と使い分け", slug: "guides/database" },
+                { label: "SQLiteの導入", slug: "guides/database/sqlite-installation" },
+                { label: "基本操作", slug: "guides/database/table-design" },
+                { label: "DB用語集", slug: "guides/database/glossary" },
+              ],
+            },
             { label: "開発ツール", slug: "guides/development-tools" },
             {
               label: "AI Coding Agent",

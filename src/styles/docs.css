@@ -80,8 +80,13 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
 .content-panel { padding-block: 1.5rem; }
 .content-panel:first-child { border-bottom: 1px solid var(--sl-color-gray-5); }
 .sl-markdown-content { line-height: 1.75; }
-.sl-markdown-content h2 { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--sl-color-gray-5); letter-spacing: -0.02em; }
-.sl-markdown-content h3 { margin-top: 1.8rem; letter-spacing: -0.01em; }
+.sl-markdown-content h2 { font-size: 1.5rem; letter-spacing: -0.02em; }
+.sl-markdown-content h3 { font-size: 1.125rem; font-weight: 650; letter-spacing: -0.01em; }
+.sl-markdown-content .sl-heading-wrapper.level-h2 { margin-top: 3rem; font-size: 1.5rem; }
+.sl-markdown-content .sl-heading-wrapper.level-h3 { margin-top: 1.75rem; padding-inline-start: 1rem; font-size: 1.125rem; }
+.sl-markdown-content .sl-heading-wrapper.level-h2 > h2 { margin-top: 0; font-size: 1.5rem; }
+.sl-markdown-content .sl-heading-wrapper.level-h3 > h3 { margin-top: 0; font-size: 1.125rem; }
+.sl-markdown-content .sl-heading-wrapper.level-h3 + :is(p, ul, ol) { margin-inline-start: 1rem; }
 .sl-markdown-content a:not([class]) { text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 .sl-markdown-content table { display: table; width: 100%; font-size: 0.86rem; }
 .sl-markdown-content th { background: var(--sl-color-gray-6); font-weight: 650; }

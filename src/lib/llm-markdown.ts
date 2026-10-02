@@ -68,6 +68,7 @@ function markdownBody(entry: DocEntry) {
     .replace(/<\/Card>/g, "")
     .replace(/<details>\s*<summary>([^<]+)<\/summary>/g, "### $1\n")
     .replace(/<\/details>/g, "")
+    .replace(/<ruby>([^<]+)<rt>([^<]+)<\/rt><\/ruby>/g, "$1（$2）")
     .replace(/<br\s*\/>/g, "\n")
     .replace(/<\/?small>/g, "")
     .replace(/<\/?div[^>]*>/g, "")
