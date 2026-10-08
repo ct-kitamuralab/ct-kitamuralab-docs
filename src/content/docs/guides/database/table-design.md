@@ -93,7 +93,7 @@ SELECT id, code, name FROM weather_stations;
 
 | 定義 | この表での意味 |
 | --- | --- |
-| `id INTEGER PRIMARY KEY` | 整数のIDで行を一意に識別する。これを[主キー](../glossary/#主キー)と呼ぶ |
+| `id INTEGER PRIMARY KEY` | 整数のIDで行を一意に識別する。これを[主キー](../#基本用語)と呼ぶ |
 | `code TEXT NOT NULL UNIQUE` | コードは文字列。[値を必須にし](../glossary/#not-null)、[同じコードの重複を拒否する](../glossary/#unique) |
 | `name TEXT NOT NULL` | 名前は文字列。値を必須にする |
 | `STRICT` | 宣言した型に変換できない値を拒否する。SQLite 3.37.0以降で利用できる |
