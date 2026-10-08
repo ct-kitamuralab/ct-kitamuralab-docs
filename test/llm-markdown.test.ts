@@ -128,6 +128,15 @@ describe("llm-markdown: renderMarkdown", () => {
     expect(out).not.toContain("<SystemStatus");
   });
 
+  it("最近の更新を記事へのリンク付きMarkdownへ変換する", async () => {
+    const { renderMarkdown } = await load(DEFAULT_BASE);
+    const out = renderMarkdown(entry("index", "## 最近の更新\n\n<RecentUpdates />"), "2026-10-02", [
+      { id: "guides/python", title: "Python環境", date: "2026-10-02T10:00:00+09:00", kind: "new" },
+    ]);
+    expect(out).toContain(`2026-10-02 — **新規**: [Python環境](${SITE}${DEFAULT_BASE}/guides/python/)`);
+    expect(out).not.toContain("<RecentUpdates");
+  });
+
   it("SystemStatus が行にない場合は空に置換する", async () => {
     const { renderMarkdown } = await load(DEFAULT_BASE);
     const out = renderMarkdown(entry("getting-started/coder", "本文です。"), "2026-08-16");

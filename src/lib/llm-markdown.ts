@@ -1,4 +1,6 @@
 import type { CollectionEntry } from "astro:content";
+import { directoryLinks } from "./navigation.mjs";
+import { updateDate, updateLabel, type RecentUpdate } from "./recent-updates";
 
 const site = "https://ct-kitamuralab.github.io";
 const base = process.env.BASE_PATH ?? "/ct-kitamuralab-docs";
@@ -53,9 +55,14 @@ function statusTable(items: string) {
   ].join("\n");
 }
 
-function markdownBody(entry: DocEntry) {
+function markdownBody(entry: DocEntry, updates: RecentUpdate[]) {
   let body = entry.body
     .replace(/^import .*$/gm, "")
+    .replace(/<SectionDirectory section="([^"]+)"\s*\/>/g, (_, section) =>
+      directoryLinks(section).map((link) => `- [${link.label}](${pageUrl(link.slug)})`).join("\n"))
+    .replace(/<RecentUpdates\s*\/>/g, () => updates.length > 0
+      ? updates.map((update) => `- ${updateDate(update.date)} — **${updateLabel(update.kind)}**: [${update.title.replace(/[\\\[\]]/g, "\\$&")}](${pageUrl(update.id)})`).join("\n")
+      : "記事の更新履歴は、公開後に表示されます。")
     .replace(/<SystemStatus items=\{\[([\s\S]*?)\]\} \/>/g, (_, items) => statusTable(items))
     .replace(
       /<div class="quick-facts">\s*<div><span>([^<]+)<\/span><strong>([^<]+)<\/strong><\/div>\s*<div><span>([^<]+)<\/span><strong>([^<]+)<\/strong><\/div>\s*<div><span>([^<]+)<\/span><strong>([^<]+)<\/strong><\/div>\s*<\/div>/g,
@@ -77,7 +84,7 @@ function markdownBody(entry: DocEntry) {
   return absoluteLinks(body.replace(/^ {2,}/gm, "").replace(/\n{3,}/g, "\n\n").trim(), entry.id);
 }
 
-export function renderMarkdown(entry: DocEntry, updated: string) {
+export function renderMarkdown(entry: DocEntry, updated: string, updates: RecentUpdate[] = []) {
   const indexUrl = sectionLlmsUrl(entry.id);
   return [
     "---",
@@ -95,7 +102,7 @@ export function renderMarkdown(entry: DocEntry, updated: string) {
     "",
     `Last updated ${updated} | Copy as Markdown | [View as Markdown](${markdownUrl(entry.id)})`,
     "",
-    markdownBody(entry),
+    markdownBody(entry, updates),
     "",
   ].join("\n");
 }

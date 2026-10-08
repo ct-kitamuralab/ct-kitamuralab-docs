@@ -14,6 +14,9 @@ hero:
       variant: minimal
 ---
 
+import RecentUpdates from "../../components/RecentUpdates.astro";
+import SectionDirectory from "../../components/SectionDirectory.astro";
+
 このサイトには、喜多村研究室が提供するシステムの利用案内と、研究開発で必要になる汎用的な技術の解説があります。
 
 ## 目次
@@ -21,16 +24,11 @@ hero:
 <div class="landing-directory">
 <div class="landing-directory-section">
 
-### 研究室のシステムを使う
+### 利用を始める
 
 研究室が提供する開発環境、共有GPU、AI研究基盤を利用するための案内です。
 
-- [概要](getting-started/) — 共通の開発環境と利用開始までの流れを確認します。
-- [利用対象と申請](getting-started/application/) — 利用できる人と申請方法を確認します。
-- [Coder Workspace](getting-started/coder/) — ブラウザやVS Codeから利用できる開発環境を確認します。
-- [開発ツール](getting-started/coder/development-tools/) — Workspaceで利用できる主要なToolを確認します。
-- [GPUを利用する](getting-started/coder/gpu/) — 共有GPUの確認方法と利用上の注意を確認します。
-- [利用ルール](operations/rules/) — 共有Resource、研究Data、秘密情報の扱いを確認します。
+<SectionDirectory section="利用を始める" />
 
 </div>
 <div class="landing-directory-section">
@@ -39,10 +37,11 @@ hero:
 
 特定の研究室システムに限らず、研究開発で利用できる基本的な技術の解説です。
 
-- [ターミナルの基本](guides/linux-terminal/) — Commandを使ったFileやDirectoryの操作を学びます。
-- [GitとGitHub](guides/git-github/) — 変更履歴とRemote Repositoryの基本を学びます。
-- [Python環境](guides/python/) — Virtual EnvironmentとPackage管理を学びます。
-- [AI Coding Agent](guides/ai-coding-agents/) — Coding Agentの役割と安全な使い方を学びます。
+<SectionDirectory section="開発ガイド" />
 
 </div>
 </div>
+
+## 最近の更新
+
+<RecentUpdates />

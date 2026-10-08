@@ -53,7 +53,7 @@ export function frontmatter(id: string): { title: string; description: string } 
   return { title, description };
 }
 
-export function sidebarSlugs(configPath = join(root, "astro.config.mjs")): string[] {
+export function sidebarSlugs(configPath = join(root, "src/lib/navigation.mjs")): string[] {
   const raw = readFileSync(configPath, "utf8");
   return [...raw.matchAll(/slug: "([^"]+)"/g)].map((m) => m[1]);
 }

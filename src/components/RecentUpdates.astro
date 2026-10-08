@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import { getRecentUpdates, updateDate, updateLabel } from "../lib/recent-updates";
+
+const updates = await getRecentUpdates(await getCollection("docs"));
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+{updates.length > 0 ? (
+  <ul class="recent-updates" role="list">
+    {updates.map((update) => (
+      <li>
+        <time datetime={update.date}>{updateDate(update.date)}</time>
+        <span class:list={["recent-update-badge", { "is-new": update.kind === "new" }]}>{updateLabel(update.kind)}</span>
+        <a href={`${base}/${update.id}/`}>{update.title}</a>
+      </li>
+    ))}
+  </ul>
+) : <p>記事の更新履歴は、公開後に表示されます。</p>}

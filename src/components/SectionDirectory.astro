@@ -1,0 +1,16 @@
+---
+import { directoryLinks } from "../lib/navigation.mjs";
+
+interface Props {
+  section: string;
+}
+
+const links = directoryLinks(Astro.props.section);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<ul>
+  {links.map((link) => (
+    <li><a href={`${base}/${link.slug}/`}>{link.label}</a></li>
+  ))}
+</ul>
