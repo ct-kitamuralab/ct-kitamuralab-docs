@@ -123,8 +123,8 @@ header.header { border-bottom: 1px solid var(--sl-color-gray-5); box-shadow: non
 .markdown-copy { display: inline-flex; width: fit-content; flex: none; border: 0; border-radius: 0; padding-block: 0; color: inherit; font-size: inherit; font-weight: inherit; text-decoration: none; }
 .markdown-copy:hover { color: var(--sl-color-accent); text-decoration: underline; }
 
-.hero { padding-block: 2.2rem 1.2rem !important; }
-.hero h1 { max-width: 18ch; letter-spacing: -0.04em; }
+.hero { grid-template-columns: 1fr; padding-block: 2.2rem 1.2rem !important; }
+.hero h1 { max-width: 100%; letter-spacing: -0.04em; }
 .hero .tagline { max-width: 42rem; color: var(--sl-color-gray-2); font-size: 1rem; line-height: 1.75; }
 .hero .actions a { border-radius: 0.15rem; }
 
